@@ -1,6 +1,6 @@
 import { Provider } from '@app/provider'
 import { MetaHead } from '@components/Layout'
-import Loader from '@components/ui/Loader'
+import { Loader } from '@components/ui'
 import DefaultLayout from '@layouts/DefaultLayout'
 import { AppPropsWithLayout } from '@types'
 import { useEffect, useState } from 'react'

@@ -1,6 +1,6 @@
 import { SearchOutlined, UserOutlined } from '@ant-design/icons'
 import { Container } from '@components/Layout'
-import Modal from '@components/ui/Modal'
+import { Modal } from '@components/ui'
 import { toastContent } from '@helpers/toastContent'
 import {
   Avatar,

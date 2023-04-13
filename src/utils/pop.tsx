@@ -1,4 +1,4 @@
-import Spinner from '@components/ui/Spinner'
+import { Spinner } from '@components/ui'
 import { web3ErrorMsg } from '@constants/web3ErrorMsg'
 import { Popper } from '@helpers/Popper'
 import { useWeb3 } from '@hooks/stores/useWeb3'
