@@ -30,6 +30,9 @@ export const useActive = () => {
     } catch (err) {
       if (err instanceof UserRejectedRequestError) {
         toast.error("You have rejected the connect request")
+      } else {
+        const message = err?.message
+        toast.error(message)
       }
     }
   }

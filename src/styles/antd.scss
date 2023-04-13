@@ -3,7 +3,11 @@
 }
 
 .ant-btn {
-  @apply flex items-center justify-center shadow-none disabled:flex disabled:items-center disabled:justify-center;
+  @apply text-content disabled:text-content flex items-center justify-center shadow-none disabled:flex disabled:items-center disabled:justify-center;
+}
+
+.ant-transfer .ant-transfer-operation .ant-btn {
+  @apply flex;
 }
 
 button,
@@ -19,10 +23,6 @@ button,
 
 .ant-select-dropdown .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
   @apply bg-slate-700;
-}
-
-.ant-transfer .ant-transfer-operation .ant-btn {
-  @apply flex;
 }
 
 .ant-slider .ant-slider-step {
@@ -55,9 +55,8 @@ button,
 
 .ant-modal .ant-modal-content {
   @apply bg-component  dark:bg-[#27272a];
+}
 
-  & > p,
-  & > span {
-    @apply text-content;
-  }
+.ant-modal .ant-modal-header {
+  @apply dark:bg-transparent;
 }
