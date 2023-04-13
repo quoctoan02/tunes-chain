@@ -53,7 +53,7 @@ const Example: FC<ExampleProps> = (props) => {
   const [notificationApi, contextHolderNotification] = notification.useNotification()
 
   const openNotification = (placement: NotificationPlacement) => {
-    notificationApi.info({
+    notificationApi.success({
       message: `Notification ${placement}`,
       description: <Context.Consumer>{({ name }) => `Hello, ${name}!`}</Context.Consumer>,
       placement,
@@ -65,7 +65,7 @@ const Example: FC<ExampleProps> = (props) => {
   }
 
   return (
-    <Container size="md" className="flex flex-col gap-4">
+    <Container size="md" className="flex flex-col gap-4 py-20">
       <Button type="primary" size="large" onClick={() => setOpen(true)} icon={<SearchOutlined />}>
         Click me!
       </Button>
@@ -103,7 +103,7 @@ const Example: FC<ExampleProps> = (props) => {
           console.log("click")
         }}
       >
-        {/* {contextHolderNotification} */}
+        {contextHolderNotification}
         {contextHolder}
         Show Message
       </Button>

@@ -2,8 +2,12 @@
   @apply bg-primary-500 hover:bg-primary-400 disabled:bg-slate-700 disabled:text-slate-300 disabled:hover:bg-slate-800;
 }
 
-.ant-btn {
+button.ant-btn {
   @apply text-content disabled:text-content flex items-center justify-center shadow-none disabled:flex disabled:items-center disabled:justify-center;
+}
+
+button.ant-switch {
+  @apply bg-slate-300;
 }
 
 .ant-transfer .ant-transfer-operation .ant-btn {
@@ -30,7 +34,7 @@ button,
 }
 
 .ant-transfer .ant-transfer-list-content-item-checked {
-  @apply bg-slate-700;
+  @apply dark:bg-slate-900;
 }
 
 .ant-segmented .ant-segmented-item:hover:not(.ant-segmented-item-selected):not(.ant-segmented-item-disabled)::after {
