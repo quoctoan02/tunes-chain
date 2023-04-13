@@ -21,3 +21,13 @@ textarea,
 select {
   background-color: transparent;
 }
+
+// Custom React Toastify
+.Toastify {
+  .Toastify__toast.Toastify__toast--default {
+    // @apply bg-black;
+  }
+  .Toastify__close-button.Toastify__close-button--colored {
+    @apply text-slate-700;
+  }
+}

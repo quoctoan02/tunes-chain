@@ -1,6 +1,7 @@
 import { SearchOutlined, UserOutlined } from "@ant-design/icons"
 import { Container } from "@components/Layout"
 import Modal from "@components/ui/Modal"
+import { toastContent } from "@helpers/toastContent"
 import {
   Avatar,
   Badge,
@@ -72,6 +73,8 @@ const Example: FC<ExampleProps> = (props) => {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio rerum officiis consequuntur perspiciatis
         sapiente tenetur neque nihil alias ea at ipsa nulla ab, maiores accusamus culpa hic incidunt tempore reiciendis?
       </Modal>
+
+      <Button onClick={() => toastContent({ message: "Toast message", type: "success" })}>Toast Message</Button>
 
       <Dropdown menu={{ items }} placement="bottomLeft" arrow>
         <Button>bottomLeft</Button>
