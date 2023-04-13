@@ -15,11 +15,16 @@ interface AntTokenTheme {
   dark: Partial<AliasToken>
 }
 
-const { theme } = resolveConfig(tailwindConfig as any)
+const { theme: tailwindTheme } = resolveConfig(tailwindConfig as any)
 
-const colors = { light: { ...theme.colors, ...dynamicColors.light }, dark: { ...theme.colors, ...dynamicColors.dark } }
+const tailwindColors = {
+  light: { ...tailwindTheme.colors, ...dynamicColors.light },
+  dark: { ...tailwindTheme.colors, ...dynamicColors.dark },
+}
 
-console.log(colors)
+console.log({ tailwindTheme })
+
+const fontFamily = tailwindTheme.fontFamily.sans.join(', ')
 
 const AntProvider: FC<AntProviderProps> = ({ children }) => {
   const { theme } = useTheme()
@@ -36,7 +41,7 @@ const AntProvider: FC<AntProviderProps> = ({ children }) => {
             colorBgContainer: 'transparent',
           },
           Table: {
-            colorBgContainer: theme === 'dark' ? colors.dark.slate[800] : '',
+            colorBgContainer: theme === 'dark' ? tailwindColors.dark.slate[800] : '',
           },
         },
       }}
@@ -48,15 +53,18 @@ const AntProvider: FC<AntProviderProps> = ({ children }) => {
 
 const defaultTheme = (theme: ThemeName): Partial<AliasToken> => {
   return {
-    colorPrimaryText: colors[theme].primary[500],
-    colorText: colors[theme].textContent,
-    colorPrimary: colors[theme].primary[500],
-    colorBgElevated: colors[theme].component,
-    colorSuccess: colors[theme].success[500],
-    colorError: colors[theme].error[500],
-    colorPrimaryBorder: colors[theme].primary[500],
-    colorIcon: colors[theme].textContent,
-    colorTextLabel: colors[theme].textContent,
+    // Config font family
+    fontFamily,
+    // Config colors
+    colorPrimaryText: tailwindColors[theme].primary[500],
+    colorText: tailwindColors[theme].textContent,
+    colorPrimary: tailwindColors[theme].primary[500],
+    colorBgElevated: tailwindColors[theme].component,
+    colorSuccess: tailwindColors[theme].success[500],
+    colorError: tailwindColors[theme].error[500],
+    colorPrimaryBorder: tailwindColors[theme].primary[500],
+    colorIcon: tailwindColors[theme].textContent,
+    colorTextLabel: tailwindColors[theme].textContent,
   }
 }
 
@@ -66,19 +74,19 @@ const tokenTheme: AntTokenTheme = {
   },
   dark: {
     ...defaultTheme('dark'),
-    colorBgElevated: colors.dark.component,
-    colorFillSecondary: colors.dark.slate[300],
-    colorSplit: colors.dark.slate[500],
-    colorTextDescription: colors.dark.slate[300],
-    colorBgTextHover: colors.dark.slate[500],
-    colorBgContainer: colors.dark.slate[700],
-    controlOutline: colors.dark.slate[500],
-    controlItemBgActiveDisabled: colors.dark.slate[700],
-    colorTextDisabled: colors.dark.slate[800],
-    colorBorder: colors.dark.slate[700],
-    colorTextPlaceholder: colors.dark.slate[700],
-    colorBgLayout: colors.dark.slate[600],
-    // colorLinkHover: colors.dark.slate[700],
+    colorBgElevated: tailwindColors.dark.component,
+    colorFillSecondary: tailwindColors.dark.slate[300],
+    colorSplit: tailwindColors.dark.slate[500],
+    colorTextDescription: tailwindColors.dark.slate[300],
+    colorBgTextHover: tailwindColors.dark.slate[500],
+    colorBgContainer: tailwindColors.dark.slate[700],
+    controlOutline: tailwindColors.dark.slate[500],
+    controlItemBgActiveDisabled: tailwindColors.dark.slate[700],
+    colorTextDisabled: tailwindColors.dark.slate[800],
+    colorBorder: tailwindColors.dark.slate[700],
+    colorTextPlaceholder: tailwindColors.dark.slate[700],
+    colorBgLayout: tailwindColors.dark.slate[600],
+    // colorLinkHover: tailwindColors.dark.slate[700],
   },
 }
 

@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { AiFillCheckCircle, AiFillInfoCircle } from 'react-icons/ai'
 import { BiErrorCircle } from 'react-icons/bi'
 
-export interface ToastifyProps {
+export interface ToastComponentProps {
   message: string
   type: 'success' | 'error' | 'info'
   title?: string
@@ -15,7 +15,7 @@ const toastIcon = {
   error: <BiErrorCircle className="text-error-500 text-4xl" />,
 }
 
-const Toastify: FC<ToastifyProps> = ({ title, message, type }) => {
+const ToastComponent: FC<ToastComponentProps> = ({ title, message, type }) => {
   const _title = title || type
 
   return (
@@ -46,4 +46,4 @@ const Toastify: FC<ToastifyProps> = ({ title, message, type }) => {
   )
 }
 
-export default Toastify
+export default ToastComponent

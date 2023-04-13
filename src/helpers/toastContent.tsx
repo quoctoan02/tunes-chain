@@ -1,8 +1,8 @@
+import { ToastComponent, ToastComponentProps } from '@components/ui'
 import { ToastOptions, toast } from 'react-toastify'
-import Toastify, { ToastifyProps } from './Toastify'
 
-export const toastContent = ({ message, type, title }: ToastifyProps, options?: ToastOptions) => {
-  return toast(<Toastify type={type} message={message} title={title} />, {
+export const toastContent = ({ message, type, title }: ToastComponentProps, options?: ToastOptions) => {
+  return toast(<ToastComponent type={type} message={message} title={title} />, {
     closeButton: true,
     hideProgressBar: false,
     ...options,
