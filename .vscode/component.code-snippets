@@ -1,17 +1,34 @@
 {
-  "Print react component with typescript": {
+  "Print to react component with typescript": {
     "prefix": "tsmcp",
     "body": [
-      "import { FC } from 'react';",
+      "import type { FC } from 'react';",
       "",
-      "interface ${1:Component}Props {}",
+      "interface ${1:index}Props {}",
       "",
-      "const ${1:Component}: FC<${1:Component}Props> = (${2:props}) => {$3",
-      "  return <div>${1:Component}</div>;",
+      "const ${1:index}:FC<${1:index}Props> = (${2:props}) => {",
+      "  return <div>${1:index}</div>",
+      "}",
+      "",
+      "export default ${1:index};"
+    ],
+    "description": "My snippet react component with TS"
+  },
+  "Print to next page component with typescript": {
+    "prefix": "tsmnpc",
+    "body": [
+      "import type { NextPage } from 'next';",
+      "",
+      "const ${1:index}:NextPage = () => {",
+      "  return (",
+      "     <>",
+      "       <div className=\"\">${1:index}</div>",
+      "     </>",
+      " );",
       "};",
       "",
-      "export default ${1:Component};"
+      "export default ${1:index};"
     ],
-    "description": "Snippet react component"
+    "description": "My snippet next page component with TS"
   }
 }
