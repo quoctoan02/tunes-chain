@@ -34,7 +34,7 @@ const NotFoundPage: NextPageWithLayout = () => {
       </Head>
 
       <Container>
-        <div className="flex min-h-screen flex-col items-center justify-center pb-20 pt-5">
+        <div className="flex min-h-screen flex-col items-center justify-center py-20 pt-5">
           <h1 className="text-5xl font-bold uppercase tracking-wider ">404</h1>
           <p className="text-4xl font-semibold uppercase text-blue-500">Page not found</p>
           <p className="mt-3 text-lg">

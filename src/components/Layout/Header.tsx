@@ -1,5 +1,5 @@
 import { ToggleTheme } from "@app/toggle-theme"
-import { routes } from "@config/routes.config"
+import { routePath, routes } from "@config/routes.config"
 import { useActive } from "@hooks/core/useActive"
 import { truncateAddress } from "@utils/string"
 import { cn } from "@utils/style"
@@ -22,11 +22,13 @@ const Header: FC<HeaderProps> = (props) => {
     setIsOpenDrawer(false)
   }
 
+  const abc = {}
+
   return (
     <>
       <header className="bg-component fixed left-0 right-0 top-0 z-50 h-16 shadow">
         <Container className="flex h-full items-center justify-between">
-          <Link href="/" className="h-8">
+          <Link href={routePath.home} className="h-8">
             <img src="/logo/logo.png" className="h-full" />
           </Link>
           <div className="flex items-center gap-6">
