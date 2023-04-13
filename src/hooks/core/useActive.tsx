@@ -6,8 +6,8 @@ import { useUser } from "@hooks/stores/useUser"
 import { Modal } from "antd"
 import { useCallback } from "react"
 import { isDesktop } from "react-device-detect"
-import toast from "react-hot-toast"
 import { AiOutlineClose } from "react-icons/ai"
+import { toast } from "react-toastify"
 import { UserRejectedRequestError, useAccount, useConnect, useDisconnect } from "wagmi"
 
 export const useActive = () => {

@@ -4,7 +4,7 @@ import { useWeb3 } from "@hooks/stores/useWeb3"
 import axios, { AxiosError, AxiosInstance } from "axios"
 import { camelizeKeys, decamelizeKeys } from "humps"
 import jwtDecode from "jwt-decode"
-import { toast } from "react-hot-toast"
+import { toast } from "react-toastify"
 
 export const http: AxiosInstance = axios.create({
   baseURL: API_URL,
