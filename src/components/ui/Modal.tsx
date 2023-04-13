@@ -8,7 +8,13 @@ interface ModalProps extends AntModalProps {
 
 const Modal: FC<ModalProps> = ({ children, ...props }) => {
   return (
-    <AntModal centered footer={null} {...props} closeIcon={<AiOutlineClose className="!text-content  text-xl" />}>
+    <AntModal
+      centered
+      footer={null}
+      destroyOnClose
+      closeIcon={<AiOutlineClose className="!text-content  text-xl" />}
+      {...props}
+    >
       {children}
     </AntModal>
   )

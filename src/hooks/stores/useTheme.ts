@@ -6,7 +6,7 @@ export const useTheme = create<Theme>()(
   persist(
     (set, get) => ({
       //states
-      theme: 'light',
+      theme: 'dark',
 
       // actions
       toggle: (theme) => {
