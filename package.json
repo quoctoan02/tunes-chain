@@ -48,8 +48,6 @@
   },
   "devDependencies": {
     "@bonehub/tailwind-dynamic-colors": "^0.0.3",
-    "@headlessui-float/react": "^0.11.0",
-    "@headlessui/react": "^1.7.13",
     "@tailwindcss/forms": "^0.5.3",
     "@typechain/ethers-v5": "^10.2.0",
     "@types/node": "18.15.11",

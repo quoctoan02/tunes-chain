@@ -1,8 +1,6 @@
-"use client"
-
 import { FC, SVGAttributes } from "react"
 
-export const Spinner: FC<SVGAttributes<SVGElement>> = ({ width, height, viewBox, ...props }) => {
+const Spinner: FC<SVGAttributes<SVGElement>> = ({ width, height, viewBox, ...props }) => {
   return (
     <svg width="1em" height="1em" viewBox="0 0 128 128" {...props}>
       <rect x="0" y="0" width="100%" height="100%" fill="none" />
@@ -38,4 +36,4 @@ export const Spinner: FC<SVGAttributes<SVGElement>> = ({ width, height, viewBox,
   )
 }
 
-Spinner.displayName = "Spinner"
+export default Spinner

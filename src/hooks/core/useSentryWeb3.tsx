@@ -1,8 +1,7 @@
-import { Button } from "@components/core/button"
-import { Empty } from "@components/core/empty"
 import { Popper } from "@helpers/Popper"
 import { useWeb3 } from "@hooks/stores/useWeb3"
 import { popWeb3Errors } from "@utils/pop"
+import { Button, Empty } from "antd"
 import { useCallback } from "react"
 import useSWR from "swr"
 import { useAccount, useNetwork, useProvider, useSigner, useSwitchNetwork } from "wagmi"
@@ -33,10 +32,10 @@ export const useSentryWeb3 = () => {
         html: (
           <div className="flex flex-col items-center gap-2">
             <Empty>Please switch your network to continue.</Empty>
-            <Button.Async className="w-full" variant="primary" onClick={setupChain}>
+            <Button className="w-full" type="primary" onClick={setupChain}>
               Switch network
-            </Button.Async>
-            <Button className="w-full" variant="primary-outlined">
+            </Button>
+            <Button className="w-full" type="dashed">
               Disconnect
             </Button>
           </div>

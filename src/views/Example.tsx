@@ -1,5 +1,5 @@
 import { SearchOutlined, UserOutlined } from "@ant-design/icons"
-import { Container } from "@components/core/container"
+import { Container } from "@components/Layout"
 import Modal from "@components/ui/Modal"
 import {
   Avatar,

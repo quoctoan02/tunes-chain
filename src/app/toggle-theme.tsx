@@ -1,5 +1,5 @@
-import { Button } from "@components/core/button"
 import { useTheme } from "@hooks/stores/useTheme"
+import { Button } from "antd"
 import { FC } from "react"
 
 export const ToggleTheme: FC = () => {
@@ -10,7 +10,7 @@ export const ToggleTheme: FC = () => {
   }
 
   return (
-    <Button onClick={handleToggleTheme} variant="outlined" className="aspect-square p-0">
+    <Button onClick={handleToggleTheme} type="primary" className="aspect-square p-0">
       {theme === "dark" ? (
         <svg
           stroke="currentColor"
