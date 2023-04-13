@@ -1,5 +1,5 @@
-import Head from "next/head"
-import type { FC } from "react"
+import Head from 'next/head'
+import type { FC } from 'react'
 
 interface MetaHeadProps {
   title?: string
@@ -9,7 +9,7 @@ interface MetaHeadProps {
 }
 
 const MetaHead: FC<MetaHeadProps> = (props) => {
-  const { title = "Template NextJs", thumbnail = "/thumbnail.png", description = "Template NextJs", url = "" } = props
+  const { title = 'Template NextJs', thumbnail = '/thumbnail.png', description = 'Template NextJs', url = '' } = props
 
   return (
     <Head>

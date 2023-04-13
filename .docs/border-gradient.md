@@ -5,7 +5,7 @@
   position: relative;
   background-clip: padding-box;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     inset: 0;
     border-radius: inherit;

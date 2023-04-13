@@ -1,7 +1,7 @@
-import { Interface } from "@ethersproject/abi"
-import { useCallback } from "react"
-import { Address } from "wagmi"
-import { useMulticallContract } from "./useContract"
+import { Interface } from '@ethersproject/abi'
+import { useCallback } from 'react'
+import { Address } from 'wagmi'
+import { useMulticallContract } from './useContract'
 
 export const useMulticall = <T = any>(abi: any) => {
   const multicallContract = useMulticallContract()

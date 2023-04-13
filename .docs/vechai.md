@@ -3,12 +3,12 @@
 ## src/config/vechai.config.js
 
 ```js
-import { ColorScheme, extendTheme } from "@vechaiui/react"
-const { light: lightColors, dark: darkColors } = require("../../.tailwind/colors")
+import { ColorScheme, extendTheme } from '@vechaiui/react'
+const { light: lightColors, dark: darkColors } = require('../../.tailwind/colors')
 
 const light: ColorScheme = {
-  id: "light",
-  type: "light",
+  id: 'light',
+  type: 'light',
   colors: {
     bg: { base: lightColors.body, fill: lightColors.component },
     text: {
@@ -21,8 +21,8 @@ const light: ColorScheme = {
 }
 
 const dark: ColorScheme = {
-  id: "dark",
-  type: "dark",
+  id: 'dark',
+  type: 'dark',
   colors: {
     bg: { base: darkColors.body, fill: darkColors.component },
     text: {
@@ -35,12 +35,12 @@ const dark: ColorScheme = {
 }
 
 export const theme = extendTheme({
-  cursor: "pointer",
+  cursor: 'pointer',
   colorSchemes: {
     light,
     dark,
   },
-  rounded: "0.5rem",
+  rounded: '0.5rem',
 })
 ```
 

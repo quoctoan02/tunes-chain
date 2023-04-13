@@ -1,7 +1,7 @@
-import { SearchOutlined, UserOutlined } from "@ant-design/icons"
-import { Container } from "@components/Layout"
-import Modal from "@components/ui/Modal"
-import { toastContent } from "@helpers/toastContent"
+import { SearchOutlined, UserOutlined } from '@ant-design/icons'
+import { Container } from '@components/Layout'
+import Modal from '@components/ui/Modal'
+import { toastContent } from '@helpers/toastContent'
 import {
   Avatar,
   Badge,
@@ -37,14 +37,14 @@ import {
   Transfer,
   message,
   notification,
-} from "antd"
-import { NotificationPlacement } from "antd/es/notification/interface"
-import { SliderMarks } from "antd/es/slider"
-import { FC, createContext, useState } from "react"
+} from 'antd'
+import { NotificationPlacement } from 'antd/es/notification/interface'
+import { SliderMarks } from 'antd/es/slider'
+import { FC, createContext, useState } from 'react'
 
 interface ExampleProps {}
 
-const Context = createContext({ name: "Default" })
+const Context = createContext({ name: 'Default' })
 
 const Example: FC<ExampleProps> = (props) => {
   const [open, setOpen] = useState(false)
@@ -61,7 +61,7 @@ const Example: FC<ExampleProps> = (props) => {
   }
 
   const confirm = () => {
-    message.info("Clicked on Yes.")
+    message.info('Clicked on Yes.')
   }
 
   return (
@@ -74,7 +74,7 @@ const Example: FC<ExampleProps> = (props) => {
         sapiente tenetur neque nihil alias ea at ipsa nulla ab, maiores accusamus culpa hic incidunt tempore reiciendis?
       </Modal>
 
-      <Button onClick={() => toastContent({ message: "Toast message", type: "success" })}>Toast Message</Button>
+      <Button onClick={() => toastContent({ message: 'Toast message', type: 'success' })}>Toast Message</Button>
 
       <Dropdown menu={{ items }} placement="bottomLeft" arrow>
         <Button>bottomLeft</Button>
@@ -82,7 +82,7 @@ const Example: FC<ExampleProps> = (props) => {
       <Breadcrumb
         items={[
           {
-            title: "Home",
+            title: 'Home',
           },
           {
             title: <a href="">Application Center</a>,
@@ -91,16 +91,16 @@ const Example: FC<ExampleProps> = (props) => {
             title: <a href="">Application List</a>,
           },
           {
-            title: "An Application",
+            title: 'An Application',
           },
         ]}
       />
 
       <Button
         onClick={() => {
-          messageApi.success("Hello world")
-          openNotification("topRight")
-          console.log("click")
+          messageApi.success('Hello world')
+          openNotification('topRight')
+          console.log('click')
         }}
       >
         {contextHolderNotification}
@@ -111,7 +111,7 @@ const Example: FC<ExampleProps> = (props) => {
       <Popconfirm
         placement="topLeft"
         title="Hello World"
-        description={" Lorem ipsum dolor sit amet consectetur adipisicing elit"}
+        description={' Lorem ipsum dolor sit amet consectetur adipisicing elit'}
         onConfirm={confirm}
         okText="Yes"
         cancelText="No"
@@ -127,17 +127,17 @@ const Example: FC<ExampleProps> = (props) => {
         current={1}
         items={[
           {
-            title: "Finished",
-            description: "Description",
+            title: 'Finished',
+            description: 'Description',
           },
           {
-            title: "In Progress",
-            description: "Description",
-            subTitle: "Left 00:00:08",
+            title: 'In Progress',
+            description: 'Description',
+            subTitle: 'Left 00:00:08',
           },
           {
-            title: "Waiting",
-            description: "Description",
+            title: 'Waiting',
+            description: 'Description',
           },
         ]}
       />
@@ -157,7 +157,7 @@ const Example: FC<ExampleProps> = (props) => {
           <Form.Item
             label="Username"
             name="username"
-            rules={[{ required: true, message: "Please input your username!" }]}
+            rules={[{ required: true, message: 'Please input your username!' }]}
           >
             <Input />
           </Form.Item>
@@ -165,11 +165,11 @@ const Example: FC<ExampleProps> = (props) => {
           <Form.Item
             label="Password"
             name="password"
-            rules={[{ required: true, message: "Please input your password!" }]}
+            rules={[{ required: true, message: 'Please input your password!' }]}
           >
             <Input.Password />
           </Form.Item>
-          <Form.Item label="Number" name="number" rules={[{ required: true, message: "Please input your number!" }]}>
+          <Form.Item label="Number" name="number" rules={[{ required: true, message: 'Please input your number!' }]}>
             <InputNumber min={1} max={10} defaultValue={3} />
           </Form.Item>
 
@@ -196,10 +196,10 @@ const Example: FC<ExampleProps> = (props) => {
             defaultValue="lucy"
             style={{ width: 120 }}
             options={[
-              { value: "jack", label: "Jack" },
-              { value: "lucy", label: "Lucy" },
-              { value: "Yiminghe", label: "yiminghe" },
-              { value: "disabled", label: "Disabled", disabled: true },
+              { value: 'jack', label: 'Jack' },
+              { value: 'lucy', label: 'Lucy' },
+              { value: 'Yiminghe', label: 'yiminghe' },
+              { value: 'disabled', label: 'Disabled', disabled: true },
             ]}
           />
         </Form>
@@ -210,7 +210,7 @@ const Example: FC<ExampleProps> = (props) => {
       </div>
       <Transfer
         dataSource={mockData}
-        titles={["Source", "Target"]}
+        titles={['Source', 'Target']}
         targetKeys={initialTargetKeys}
         //   selectedKeys={selectedKeys}
         //   onChange={onChange}
@@ -230,17 +230,17 @@ const Example: FC<ExampleProps> = (props) => {
       </Card>
 
       <Collapse
-        defaultActiveKey={["1"]}
+        defaultActiveKey={['1']}
         //   onChange={onChange}
       >
         <Collapse.Panel header="This is panel header 1" key="1">
-          <p>{" A dog is a type of domesticated animal."}</p>
+          <p>{' A dog is a type of domesticated animal.'}</p>
         </Collapse.Panel>
         <Collapse.Panel header="This is panel header 2" key="2">
-          <p>{"  Known for its loyalty and faithfulness,"}</p>
+          <p>{'  Known for its loyalty and faithfulness,'}</p>
         </Collapse.Panel>
         <Collapse.Panel header="This is panel header 3" key="3">
-          <p>{"  it can be found as a welcome guest in many households across the world."}</p>
+          <p>{'  it can be found as a welcome guest in many households across the world.'}</p>
         </Collapse.Panel>
       </Collapse>
 
@@ -256,7 +256,7 @@ const Example: FC<ExampleProps> = (props) => {
         <Button type="primary">Hover me</Button>
       </Popover>
 
-      <Segmented options={["Daily", "Weekly", "Monthly", "Quarterly", "Yearly"]} />
+      <Segmented options={['Daily', 'Weekly', 'Monthly', 'Quarterly', 'Yearly']} />
 
       <Statistic title="Active Users" value={112893} />
 
@@ -283,9 +283,9 @@ interface RecordType {
   description: string
 }
 
-const items: MenuProps["items"] = [
+const items: MenuProps['items'] = [
   {
-    key: "1",
+    key: '1',
     label: (
       <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
         1st menu item
@@ -293,7 +293,7 @@ const items: MenuProps["items"] = [
     ),
   },
   {
-    key: "2",
+    key: '2',
     label: (
       <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
         2nd menu item
@@ -301,7 +301,7 @@ const items: MenuProps["items"] = [
     ),
   },
   {
-    key: "3",
+    key: '3',
     label: (
       <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
         3rd menu item
@@ -311,12 +311,12 @@ const items: MenuProps["items"] = [
 ]
 
 const marks: SliderMarks = {
-  0: "0°C",
-  26: "26°C",
-  37: "37°C",
+  0: '0°C',
+  26: '26°C',
+  37: '37°C',
   100: {
     style: {
-      color: "#f50",
+      color: '#f50',
     },
     label: <strong>100°C</strong>,
   },
@@ -332,50 +332,50 @@ const initialTargetKeys = mockData.filter((item) => Number(item.key) > 10).map((
 
 const dataSource = [
   {
-    key: "1",
-    name: "Mike",
+    key: '1',
+    name: 'Mike',
     age: 32,
-    address: "10 Downing Street",
+    address: '10 Downing Street',
   },
   {
-    key: "2",
-    name: "John",
+    key: '2',
+    name: 'John',
     age: 42,
-    address: "10 Downing Street",
+    address: '10 Downing Street',
   },
 ]
 
 const columns = [
   {
-    title: "Name",
-    dataIndex: "name",
-    key: "name",
+    title: 'Name',
+    dataIndex: 'name',
+    key: 'name',
   },
   {
-    title: "Age",
-    dataIndex: "age",
-    key: "age",
+    title: 'Age',
+    dataIndex: 'age',
+    key: 'age',
   },
   {
-    title: "Address",
-    dataIndex: "address",
-    key: "address",
+    title: 'Address',
+    dataIndex: 'address',
+    key: 'address',
   },
 ]
 
-const tabItems: TabsProps["items"] = [
+const tabItems: TabsProps['items'] = [
   {
-    key: "1",
+    key: '1',
     label: `Tab 1`,
     children: `Content of Tab Pane 1`,
   },
   {
-    key: "2",
+    key: '2',
     label: `Tab 2`,
     children: `Content of Tab Pane 2`,
   },
   {
-    key: "3",
+    key: '3',
     label: `Tab 3`,
     children: `Content of Tab Pane 3`,
   },

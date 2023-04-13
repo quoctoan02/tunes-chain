@@ -1,4 +1,4 @@
-[class*="ant"][class*="-primary"] {
+[class*='ant'][class*='-primary'] {
   @apply bg-primary-500 hover:bg-primary-400 disabled:bg-slate-700 disabled:text-slate-300 disabled:hover:bg-slate-800;
 }
 
@@ -15,9 +15,9 @@ button.ant-switch {
 }
 
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type='button'],
+[type='reset'],
+[type='submit'] {
   background-color: inherit;
 }
 

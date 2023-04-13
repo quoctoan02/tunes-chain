@@ -1,11 +1,11 @@
-import { useWeb3 } from "@hooks/stores/useWeb3"
-import useSWR from "swr"
+import { useWeb3 } from '@hooks/stores/useWeb3'
+import useSWR from 'swr'
 
 export const useETH = () => {
   const { signer } = useWeb3()
 
   const { data: ETH } = useSWR(
-    ["ETH", signer],
+    ['ETH', signer],
     async () => {
       try {
         if (signer) {

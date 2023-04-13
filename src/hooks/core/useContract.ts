@@ -1,7 +1,7 @@
-import { Erc20__factory, Multicall__factory } from "@constants/typechain"
-import { useWeb3 } from "@hooks/stores/useWeb3"
-import { useMemo } from "react"
-import { useContractAddress } from "./useContractAddress"
+import { Erc20__factory, Multicall__factory } from '@constants/typechain'
+import { useWeb3 } from '@hooks/stores/useWeb3'
+import { useMemo } from 'react'
+import { useContractAddress } from './useContractAddress'
 
 export const useErc20Contract = (address: string) => {
   const { signerOrProvider } = useWeb3()

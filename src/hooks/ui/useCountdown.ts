@@ -1,12 +1,12 @@
-import { useState } from "react"
-import useSWR from "swr"
+import { useState } from 'react'
+import useSWR from 'swr'
 
 export const useCountdown = (targetDate) => {
   const countDownDate = new Date(targetDate).getTime()
 
   const [countDown, setCountDown] = useState(countDownDate - new Date().getTime())
 
-  useSWR(["countdown", targetDate], () => {
+  useSWR(['countdown', targetDate], () => {
     const interval = setInterval(() => {
       const newDate = countDownDate - new Date().getTime()
       setCountDown(newDate)
@@ -26,10 +26,10 @@ const getReturnValues = (countDown) => {
 
   const isDone = daysValue + hoursValue + minutesValue + secondsValue <= 0
 
-  const days = daysValue > 9 ? daysValue : isDone ? "00" : "0" + daysValue
-  const hours = hoursValue > 9 ? hoursValue : isDone ? "00" : "0" + hoursValue
-  const minutes = minutesValue > 9 ? minutesValue : isDone ? "00" : "0" + minutesValue
-  const seconds = secondsValue > 9 ? secondsValue : isDone ? "00" : "0" + secondsValue
+  const days = daysValue > 9 ? daysValue : isDone ? '00' : '0' + daysValue
+  const hours = hoursValue > 9 ? hoursValue : isDone ? '00' : '0' + hoursValue
+  const minutes = minutesValue > 9 ? minutesValue : isDone ? '00' : '0' + minutesValue
+  const seconds = secondsValue > 9 ? secondsValue : isDone ? '00' : '0' + secondsValue
 
   return { days, hours, minutes, seconds, isDone }
 }

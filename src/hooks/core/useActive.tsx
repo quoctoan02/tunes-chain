@@ -1,17 +1,17 @@
-import { DEFAULT_CHAIN_ID } from "@config/chains.config"
-import { ConnectorIds, connectorInstances } from "@config/wagmi.config"
-import { wallets } from "@config/wallets.config"
-import { Popper } from "@helpers/Popper"
-import { useUser } from "@hooks/stores/useUser"
-import { Modal } from "antd"
-import { useCallback } from "react"
-import { isDesktop } from "react-device-detect"
-import { AiOutlineClose } from "react-icons/ai"
-import { toast } from "react-toastify"
-import { UserRejectedRequestError, useAccount, useConnect, useDisconnect } from "wagmi"
+import { DEFAULT_CHAIN_ID } from '@config/chains.config'
+import { ConnectorIds, connectorInstances } from '@config/wagmi.config'
+import { wallets } from '@config/wallets.config'
+import { Popper } from '@helpers/Popper'
+import { useUser } from '@hooks/stores/useUser'
+import { Modal } from 'antd'
+import { useCallback } from 'react'
+import { isDesktop } from 'react-device-detect'
+import { AiOutlineClose } from 'react-icons/ai'
+import { toast } from 'react-toastify'
+import { UserRejectedRequestError, useAccount, useConnect, useDisconnect } from 'wagmi'
 
 export const useActive = () => {
-  const hasInjectedProvider = typeof window !== "undefined" && typeof window["ethereum"] !== "undefined"
+  const hasInjectedProvider = typeof window !== 'undefined' && typeof window['ethereum'] !== 'undefined'
 
   const { connectAsync } = useConnect()
 
@@ -29,7 +29,7 @@ export const useActive = () => {
       })
     } catch (err) {
       if (err instanceof UserRejectedRequestError) {
-        toast.error("You have rejected the connect request")
+        toast.error('You have rejected the connect request')
       } else {
         const message = err?.message
         toast.error(message)
@@ -45,19 +45,19 @@ export const useActive = () => {
       handleConnect(wallet.connectorId)
     } else if (isDesktop) {
       // In Desktop
-      if (typeof window.ethereum !== "undefined" && window.ethereum[wallet.etherId]) {
+      if (typeof window.ethereum !== 'undefined' && window.ethereum[wallet.etherId]) {
         handleConnect(wallet.connectorId)
       } else if (wallet.mobileOnly) {
         handleConnect(ConnectorIds.WalletConnect)
       } else {
-        window.open(wallet.downloadUrl, "_blank", "noopener noreferrer")
+        window.open(wallet.downloadUrl, '_blank', 'noopener noreferrer')
       }
     } else {
       // In Mobile
-      if (typeof window.ethereum !== "undefined") {
+      if (typeof window.ethereum !== 'undefined') {
         handleConnect(wallet.connectorId)
       } else if (wallet.deepLink) {
-        window.open(wallet.deepLink, "_blank", "noopener noreferrer")
+        window.open(wallet.deepLink, '_blank', 'noopener noreferrer')
       } else {
         handleConnect(ConnectorIds.WalletConnect)
       }
@@ -96,9 +96,9 @@ export const useActive = () => {
 
   const disconnect = useCallback(async () => {
     const { isConfirmed } = await Popper.fire({
-      title: "Confirm",
+      title: 'Confirm',
       html: <p className="text-center font-bold">Disconnect now ?</p>,
-      icon: "question",
+      icon: 'question',
       width: 400,
       showCancelButton: true,
     })

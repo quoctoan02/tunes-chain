@@ -38,7 +38,7 @@ module.exports = {
 module.exports = {
   plugins: {
     // custom tailwind config direction
-    tailwindcss: { config: "./tailwind/tailwind.config.js" },
+    tailwindcss: { config: './tailwind/tailwind.config.js' },
     autoprefixer: {},
   },
 }

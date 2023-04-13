@@ -1,11 +1,11 @@
-import { GlobalHooks } from "@app/global-hooks"
-import { config } from "@config/swr.config"
-import { client } from "@config/wagmi.config"
-import { ToastContainer } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
-import { SWRConfig } from "swr"
-import { WagmiConfig } from "wagmi"
-import AntProvider from "./ant-provider"
+import { GlobalHooks } from '@app/global-hooks'
+import { config } from '@config/swr.config'
+import { client } from '@config/wagmi.config'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { SWRConfig } from 'swr'
+import { WagmiConfig } from 'wagmi'
+import AntProvider from './ant-provider'
 
 export const Provider = ({ children }) => {
   return (

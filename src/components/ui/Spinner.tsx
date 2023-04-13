@@ -1,4 +1,4 @@
-import { FC, SVGAttributes } from "react"
+import { FC, SVGAttributes } from 'react'
 
 const Spinner: FC<SVGAttributes<SVGElement>> = ({ width, height, viewBox, ...props }) => {
   return (

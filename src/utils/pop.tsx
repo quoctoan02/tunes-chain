@@ -1,14 +1,14 @@
-import Spinner from "@components/ui/Spinner"
-import { web3ErrorMsg } from "@constants/web3ErrorMsg"
-import { Popper } from "@helpers/Popper"
-import { useWeb3 } from "@hooks/stores/useWeb3"
-import { HiExternalLink } from "react-icons/hi"
+import Spinner from '@components/ui/Spinner'
+import { web3ErrorMsg } from '@constants/web3ErrorMsg'
+import { Popper } from '@helpers/Popper'
+import { useWeb3 } from '@hooks/stores/useWeb3'
+import { HiExternalLink } from 'react-icons/hi'
 
 export const popPendingConfirm = () =>
   Popper.fire({
-    title: "Confirm",
+    title: 'Confirm',
     customClass: {
-      icon: "!border-none",
+      icon: '!border-none',
     },
     html: (
       <div className="flex flex-col items-center gap-6">
@@ -24,9 +24,9 @@ export const popPendingConfirm = () =>
 
 export const popPending = (msg: string, hash?: string) =>
   Popper.fire({
-    title: "Pending",
+    title: 'Pending',
     customClass: {
-      icon: "!border-none",
+      icon: '!border-none',
     },
     html: (
       <div className="flex flex-col items-center gap-6">
@@ -35,7 +35,7 @@ export const popPending = (msg: string, hash?: string) =>
         <p className="text-center text-sm font-semibold">{msg}</p>
         {hash && (
           <a
-            href={useWeb3.getState().chain.blockExplorers.default.url + "tx/" + hash}
+            href={useWeb3.getState().chain.blockExplorers.default.url + 'tx/' + hash}
             target="_blank"
             rel="noopener noreferrer"
             className="text-info flex items-center gap-2 text-center text-sm font-semibold"
@@ -53,15 +53,15 @@ export const popPending = (msg: string, hash?: string) =>
 
 export const popSuccess = (msg: string, hash?: string) =>
   Popper.fire({
-    icon: "success",
-    title: "Success",
+    icon: 'success',
+    title: 'Success',
     html: (
       <div className="flex flex-col items-center gap-2">
         {hash && <p className="text-center text-xl font-bold">Transaction Submitted</p>}
         <p className="text-center text-sm font-semibold">{msg}</p>
         {hash && (
           <a
-            href={useWeb3.getState().chain.blockExplorers.default.url + "tx/" + hash}
+            href={useWeb3.getState().chain.blockExplorers.default.url + 'tx/' + hash}
             target="_blank"
             rel="noopener noreferrer"
             className="text-info flex items-center gap-2 text-center text-xs font-medium"
@@ -77,15 +77,15 @@ export const popSuccess = (msg: string, hash?: string) =>
 
 export const popError = (msg: string, hash?: string) =>
   Popper.fire({
-    icon: "error",
-    title: "Error",
+    icon: 'error',
+    title: 'Error',
     html: (
       <div className="flex flex-col items-center gap-2">
         {hash && <p className="text-center text-xl font-bold">Transaction Failed</p>}
         <p className="text-center text-sm font-semibold">{msg}</p>
         {hash ? (
           <a
-            href={useWeb3.getState().chain.blockExplorers.default.url + "tx/" + hash}
+            href={useWeb3.getState().chain.blockExplorers.default.url + 'tx/' + hash}
             target="_blank"
             rel="noopener noreferrer"
             className="text-error flex items-center gap-2 text-center text-xs font-medium"
@@ -100,9 +100,9 @@ export const popError = (msg: string, hash?: string) =>
     showCloseButton: false,
     showConfirmButton: false,
     showDenyButton: true,
-    denyButtonText: "OK",
+    denyButtonText: 'OK',
   })
 
 export const popWeb3Errors = (err: any, defaultMsg: string) => {
-  popError(web3ErrorMsg[err.code] || defaultMsg || "An unexpected error occurred")
+  popError(web3ErrorMsg[err.code] || defaultMsg || 'An unexpected error occurred')
 }

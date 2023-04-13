@@ -1,16 +1,16 @@
-import { storageKeys } from "@constants/storage"
-import { create } from "zustand"
-import { persist } from "zustand/middleware"
+import { storageKeys } from '@constants/storage'
+import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 
 export const useTheme = create<Theme>()(
   persist(
     (set, get) => ({
       //states
-      theme: "light",
+      theme: 'light',
 
       // actions
       toggle: (theme) => {
-        document.documentElement.setAttribute("data-theme", theme)
+        document.documentElement.setAttribute('data-theme', theme)
         set({ theme })
       },
     }),

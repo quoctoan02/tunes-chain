@@ -1,8 +1,8 @@
-import { DEFAULT_CHAIN } from "@config/chains.config"
-import { storageKeys } from "@constants/storage"
-import { Chain, Provider, Signer } from "@wagmi/core"
-import { create } from "zustand"
-import { persist } from "zustand/middleware"
+import { DEFAULT_CHAIN } from '@config/chains.config'
+import { storageKeys } from '@constants/storage'
+import { Chain, Provider, Signer } from '@wagmi/core'
+import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 
 interface IWeb3Store {
   account: string

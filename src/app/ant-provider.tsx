@@ -1,10 +1,10 @@
-import dynamicColors from ".tailwind/colors"
-import tailwindConfig from ".tailwind/tailwind.config.js"
-import { useTheme } from "@hooks/stores/useTheme"
-import { ConfigProvider } from "antd"
-import { AliasToken } from "antd/es/theme/internal"
-import { FC, ReactNode } from "react"
-import resolveConfig from "tailwindcss/resolveConfig"
+import dynamicColors from '.tailwind/colors'
+import tailwindConfig from '.tailwind/tailwind.config.js'
+import { useTheme } from '@hooks/stores/useTheme'
+import { ConfigProvider } from 'antd'
+import { AliasToken } from 'antd/es/theme/internal'
+import { FC, ReactNode } from 'react'
+import resolveConfig from 'tailwindcss/resolveConfig'
 
 interface AntProviderProps {
   children: ReactNode
@@ -30,13 +30,13 @@ const AntProvider: FC<AntProviderProps> = ({ children }) => {
         token: tokenTheme[theme],
         components: {
           Input: {
-            colorBgContainer: "transparent",
+            colorBgContainer: 'transparent',
           },
           InputNumber: {
-            colorBgContainer: "transparent",
+            colorBgContainer: 'transparent',
           },
           Table: {
-            colorBgContainer: theme === "dark" ? colors.dark.slate[800] : "",
+            colorBgContainer: theme === 'dark' ? colors.dark.slate[800] : '',
           },
         },
       }}
@@ -62,10 +62,10 @@ const defaultTheme = (theme: ThemeName): Partial<AliasToken> => {
 
 const tokenTheme: AntTokenTheme = {
   light: {
-    ...defaultTheme("light"),
+    ...defaultTheme('light'),
   },
   dark: {
-    ...defaultTheme("dark"),
+    ...defaultTheme('dark'),
     colorBgElevated: colors.dark.component,
     colorFillSecondary: colors.dark.slate[300],
     colorSplit: colors.dark.slate[500],

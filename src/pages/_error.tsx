@@ -1,5 +1,5 @@
-import { Container } from "@components/Layout"
-import { Button } from "antd"
+import { Container } from '@components/Layout'
+import { Button } from 'antd'
 
 const Error = ({ statusCode }) => {
   return (
@@ -8,7 +8,7 @@ const Error = ({ statusCode }) => {
         <h1 className="text-5xl font-bold uppercase tracking-wider ">{statusCode}</h1>
 
         <p className="mt-3 text-lg">
-          {statusCode ? `An error ${statusCode} occurred on server` : "An error occurred on client"}
+          {statusCode ? `An error ${statusCode} occurred on server` : 'An error occurred on client'}
         </p>
         <Button type="primary" className="mt-4" onClick={() => location.reload()}>
           Reload page

@@ -1,5 +1,5 @@
-import { Chain } from "wagmi"
-import { bsc, bscTestnet } from "wagmi/chains"
+import { Chain } from 'wagmi'
+import { bsc, bscTestnet } from 'wagmi/chains'
 
 export enum ChainIds {
   MAINNET = bsc.id,
@@ -16,7 +16,7 @@ export const supportedChainIds: number[] = [ChainIds.MAINNET, ChainIds.TESTNET]
 export const chainsMap: Partial<Record<ChainIds, Chain>> = supportedChains.reduce((prev, curr, index, arr) => {
   return {
     ...prev,
-    [curr["id"]]: curr,
+    [curr['id']]: curr,
   }
 }, {})
 

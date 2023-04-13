@@ -1,17 +1,17 @@
-import { useTheme } from "@hooks/stores/useTheme"
-import { Button } from "antd"
-import { FC } from "react"
+import { useTheme } from '@hooks/stores/useTheme'
+import { Button } from 'antd'
+import { FC } from 'react'
 
 export const ToggleTheme: FC = () => {
   const { theme, toggle } = useTheme()
 
   const handleToggleTheme = () => {
-    toggle(theme === "dark" ? "light" : "dark")
+    toggle(theme === 'dark' ? 'light' : 'dark')
   }
 
   return (
     <Button onClick={handleToggleTheme} type="primary" className="aspect-square p-0">
-      {theme === "dark" ? (
+      {theme === 'dark' ? (
         <svg
           stroke="currentColor"
           fill="currentColor"

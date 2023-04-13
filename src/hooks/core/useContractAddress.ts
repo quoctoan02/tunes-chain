@@ -1,6 +1,6 @@
-import { ContractName, CONTRACTS } from "@constants/contracts"
-import { useWeb3 } from "@hooks/stores/useWeb3"
-import { Address } from "wagmi"
+import { ContractName, CONTRACTS } from '@constants/contracts'
+import { useWeb3 } from '@hooks/stores/useWeb3'
+import { Address } from 'wagmi'
 
 export const useContractAddress = () => {
   const { chain } = useWeb3()

@@ -1,9 +1,9 @@
-import { cn } from "@utils/style"
-import { FC, HTMLAttributes } from "react"
+import { cn } from '@utils/style'
+import { FC, HTMLAttributes } from 'react'
 
 const Empty: FC<HTMLAttributes<HTMLDivElement>> = ({ children, className }) => {
   return (
-    <div className={cn("flex w-full flex-col items-center justify-center gap-2 p-16 py-8", className)}>
+    <div className={cn('flex w-full flex-col items-center justify-center gap-2 p-16 py-8', className)}>
       <svg width="3rem" height="3rem" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M607.406 907.095C587.763 907.095 571.771 891.229 571.771 871.711H500.5C500.5 930.39 548.35 977.988 607.406 977.988C666.463 977.988 714.313 930.39 714.313 871.711H643.042C643.042 891.229 627.05 907.095 607.406 907.095Z"

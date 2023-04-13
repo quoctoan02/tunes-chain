@@ -1,10 +1,10 @@
-import { Provider } from "@app/provider"
-import { MetaHead } from "@components/Layout"
-import Loader from "@components/ui/Loader"
-import DefaultLayout from "@layouts/DefaultLayout"
-import { useEffect, useState } from "react"
-import { AppPropsWithLayout } from "src/types"
-import "../styles/styles.scss"
+import { Provider } from '@app/provider'
+import { MetaHead } from '@components/Layout'
+import Loader from '@components/ui/Loader'
+import DefaultLayout from '@layouts/DefaultLayout'
+import { AppPropsWithLayout } from '@types'
+import { useEffect, useState } from 'react'
+import '../styles/styles.scss'
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const [mounted, setMounted] = useState(false)

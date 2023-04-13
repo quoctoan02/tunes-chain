@@ -1,14 +1,14 @@
-import { ToggleTheme } from "@app/toggle-theme"
-import { routePath, routes } from "@config/routes.config"
-import { useActive } from "@hooks/core/useActive"
-import { truncateAddress } from "@utils/string"
-import { cn } from "@utils/style"
-import { Button, Drawer } from "antd"
-import Link from "next/link"
-import { useRouter } from "next/router"
-import { FC, useState } from "react"
-import { AiOutlineBars } from "react-icons/ai"
-import Container from "./Container"
+import { ToggleTheme } from '@app/toggle-theme'
+import { routePath, routes } from '@config/routes.config'
+import { useActive } from '@hooks/core/useActive'
+import { truncateAddress } from '@utils/string'
+import { cn } from '@utils/style'
+import { Button, Drawer } from 'antd'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { FC, useState } from 'react'
+import { AiOutlineBars } from 'react-icons/ai'
+import Container from './Container'
 
 interface HeaderProps {}
 
@@ -34,16 +34,16 @@ const Header: FC<HeaderProps> = (props) => {
           <div className="flex items-center gap-6">
             <nav className="flex items-center gap-6">
               {routes.map((route) => {
-                const absolutePath = route.href.split("/")[1] || ""
+                const absolutePath = route.href.split('/')[1] || ''
 
                 const active = router.pathname.includes(`/${absolutePath}`)
                 if (route.isHideLabel) return
 
                 return (
                   <Link
-                    className={cn("hover:text-primary-500", active && "active")}
+                    className={cn('hover:text-primary-500', active && 'active')}
                     href={route.href}
-                    key={route.label + "mobile"}
+                    key={route.label + 'mobile'}
                     onClick={() => handleCloseDrawer()}
                   >
                     {route.label}
@@ -57,7 +57,7 @@ const Header: FC<HeaderProps> = (props) => {
               type="primary"
               onClick={account ? disconnect : connect}
             >
-              {account ? truncateAddress(account) : "CONNECT WALLET"}
+              {account ? truncateAddress(account) : 'CONNECT WALLET'}
             </Button>
             <ToggleTheme />
             <Button icon={<AiOutlineBars />} onClick={() => setIsOpenDrawer(true)} />
@@ -67,16 +67,16 @@ const Header: FC<HeaderProps> = (props) => {
       <Drawer open={isOpenDrawer} onClose={handleCloseDrawer}>
         <nav className="flex flex-col gap-10">
           {routes.map((route) => {
-            const absolutePath = route.href.split("/")[1] || ""
+            const absolutePath = route.href.split('/')[1] || ''
 
             const active = router.pathname.includes(`/${absolutePath}`)
             if (route.isHideLabel) return
 
             return (
               <Link
-                className={cn("hover:text-primary-500", active && "active")}
+                className={cn('hover:text-primary-500', active && 'active')}
                 href={route.href}
-                key={route.label + "mobile"}
+                key={route.label + 'mobile'}
                 onClick={() => handleCloseDrawer()}
               >
                 {route.label}

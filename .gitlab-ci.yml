@@ -10,6 +10,6 @@ stages:
 
 # include
 include:
-  - local: "/.gitlab/ci_templates/deploy_dev_jobs.yml"
+  - local: '/.gitlab/ci_templates/deploy_dev_jobs.yml'
     rules:
       - if: $CI_COMMIT_BRANCH == "develop"

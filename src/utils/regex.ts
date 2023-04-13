@@ -1,4 +1,4 @@
-type RegexName = "alpha" | "int" | "float" | "url" | "currency" | "specialSymbols"
+type RegexName = 'alpha' | 'int' | 'float' | 'url' | 'currency' | 'specialSymbols'
 
 export const Regex: Record<RegexName, RegExp> = {
   alpha: RegExp(/^[A-Z]+$/i),

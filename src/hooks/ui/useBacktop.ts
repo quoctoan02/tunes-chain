@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 
 export const useBackTop = () => {
   const [visible, setVisible] = useState(false)
@@ -8,7 +8,7 @@ export const useBackTop = () => {
   }
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    window.addEventListener('scroll', () => {
       setVisible(window.scrollY > 10)
     })
   }, [])

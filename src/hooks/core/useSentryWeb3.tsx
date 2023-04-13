@@ -1,13 +1,13 @@
-import Empty from "@components/ui/Empty"
-import { Popper } from "@helpers/Popper"
-import { useWeb3 } from "@hooks/stores/useWeb3"
-import { popWeb3Errors } from "@utils/pop"
-import { Button } from "antd"
-import { useCallback, useState } from "react"
-import { toast } from "react-toastify"
-import useSWR from "swr"
-import { useAccount, useNetwork, useProvider, useSigner, useSwitchNetwork } from "wagmi"
-import { useActive } from "./useActive"
+import Empty from '@components/ui/Empty'
+import { Popper } from '@helpers/Popper'
+import { useWeb3 } from '@hooks/stores/useWeb3'
+import { popWeb3Errors } from '@utils/pop'
+import { Button } from 'antd'
+import { useCallback, useState } from 'react'
+import { toast } from 'react-toastify'
+import useSWR from 'swr'
+import { useAccount, useNetwork, useProvider, useSigner, useSwitchNetwork } from 'wagmi'
+import { useActive } from './useActive'
 
 export const useSentryWeb3 = () => {
   const { chain } = useNetwork()
@@ -29,14 +29,14 @@ export const useSentryWeb3 = () => {
     } catch (err) {
       setIsConnecting(false)
       toast.error(err?.message)
-      popWeb3Errors(err, "Switch network failed")
+      popWeb3Errors(err, 'Switch network failed')
     }
   }, [internalChain, switchNetworkAsync, disconnect])
 
-  useSWR(["sentry chain", chain, setupChain, isConnecting], () => {
+  useSWR(['sentry chain', chain, setupChain, isConnecting], () => {
     if (chain?.unsupported === true) {
       Popper.fire({
-        title: "Check your network",
+        title: 'Check your network',
         html: (
           <div className="flex flex-col items-center gap-2">
             <Empty>Please switch your network to continue.</Empty>
@@ -61,7 +61,7 @@ export const useSentryWeb3 = () => {
       })
     }
   })
-  useSWR(["sentry account", address], () => updateAccount(address))
-  useSWR(["sentry signer", signer], () => updateSigner(signer))
-  useSWR(["sentry signer or provider", signer, provider], () => updateSignerOrProvider(signer || provider))
+  useSWR(['sentry account', address], () => updateAccount(address))
+  useSWR(['sentry signer', signer], () => updateSigner(signer))
+  useSWR(['sentry signer or provider', signer, provider], () => updateSignerOrProvider(signer || provider))
 }

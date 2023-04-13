@@ -1,10 +1,10 @@
-import { API_URL } from "@config/endpoints.config"
-import { useUser } from "@hooks/stores/useUser"
-import { useWeb3 } from "@hooks/stores/useWeb3"
-import axios, { AxiosError, AxiosInstance } from "axios"
-import { camelizeKeys, decamelizeKeys } from "humps"
-import jwtDecode from "jwt-decode"
-import { toast } from "react-toastify"
+import { API_URL } from '@config/endpoints.config'
+import { useUser } from '@hooks/stores/useUser'
+import { useWeb3 } from '@hooks/stores/useWeb3'
+import axios, { AxiosError, AxiosInstance } from 'axios'
+import { camelizeKeys, decamelizeKeys } from 'humps'
+import jwtDecode from 'jwt-decode'
+import { toast } from 'react-toastify'
 
 export const http: AxiosInstance = axios.create({
   baseURL: API_URL,
@@ -18,9 +18,9 @@ http.interceptors.request.use((config) => {
   const isTokenExpired = token ? jwtDecode<{ exp: number }>(token).exp * 1000 < Date.now() : true
   if (account && token) {
     if (isTokenExpired) {
-      toast.error("Session is expired, Please login again")
+      toast.error('Session is expired, Please login again')
     } else {
-      config.headers["Authorization"] = "Bearer " + token
+      config.headers['Authorization'] = 'Bearer ' + token
     }
   }
   config.data = decamelizeKeys(config.data)
@@ -40,7 +40,7 @@ http.interceptors.response.use(
     return Promise.resolve(response)
   },
   (error: AxiosError) => {
-    error.response.statusText = error.response.data["error_code"] || "Connection lost"
+    error.response.statusText = error.response.data['error_code'] || 'Connection lost'
     error.response.data = null
     return Promise.resolve(error.response)
   }

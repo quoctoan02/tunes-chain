@@ -7,7 +7,7 @@
 .Variables: &variables
   ENV: dev
   DOCKER_HOST: tcp://docker:2375
-  DOCKER_TLS_CERTDIR: ""
+  DOCKER_TLS_CERTDIR: ''
   VERSION: $CI_COMMIT_SHORT_SHA
   DOCKER_REGISTRY_HOST: 325314427579.dkr.ecr.ap-southeast-1.amazonaws.com
   APPLICATION: dapp
@@ -52,7 +52,7 @@ deploy-dapp:
   stage: deploy
   image:
     name: alpine:latest
-    entrypoint: [""]
+    entrypoint: ['']
   variables:
     <<: *variables
   script:

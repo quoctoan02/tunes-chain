@@ -1,1 +1,1 @@
-export const SIGN_MESSAGE = "Address Sign"
+export const SIGN_MESSAGE = 'Address Sign'

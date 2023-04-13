@@ -1,10 +1,10 @@
-import { api } from "@constants/api"
-import { http } from "@helpers/http"
+import { api } from '@constants/api'
+import { http } from '@helpers/http'
 
 export class AuthService {
   getNonce(address: string) {
     return http.request<string>({
-      method: "GET",
+      method: 'GET',
       url: api.auth.getNonce,
       params: {
         address,
@@ -17,7 +17,7 @@ export class AuthService {
       userInfo: User
       token: string
     }>({
-      method: "POST",
+      method: 'POST',
       url: api.auth.login,
       data: {
         address,

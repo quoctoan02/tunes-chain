@@ -1,11 +1,11 @@
-import { SIGN_MESSAGE } from "@constants/auth"
-import { storageKeys } from "@constants/storage"
-import { Service } from "@services/app.service"
-import { popPending, popSuccess, popWeb3Errors } from "@utils/pop"
-import { toast } from "react-toastify"
-import { create } from "zustand"
-import { persist } from "zustand/middleware"
-import { useWeb3 } from "./useWeb3"
+import { SIGN_MESSAGE } from '@constants/auth'
+import { storageKeys } from '@constants/storage'
+import { Service } from '@services/app.service'
+import { popPending, popSuccess, popWeb3Errors } from '@utils/pop'
+import { toast } from 'react-toastify'
+import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
+import { useWeb3 } from './useWeb3'
 
 export const useUser = create<Partial<User>>()(
   persist(
@@ -45,23 +45,23 @@ export const useUser = create<Partial<User>>()(
         const { data: nonce } = await Service.auth.getNonce(account)
         // Check nonce
         if (!nonce) {
-          toast.error("Failed to get nonce")
+          toast.error('Failed to get nonce')
           return false
         }
         try {
-          popPending("Please confirm the sign message on your wallet to log in")
+          popPending('Please confirm the sign message on your wallet to log in')
           const sign = await signer.signMessage(`${SIGN_MESSAGE} ${nonce}`)
           const { data, statusText } = await Service.auth.login(account, sign)
           if (!data) {
             toast.error(statusText)
             return false
           }
-          popSuccess("Logged in successfully")
+          popSuccess('Logged in successfully')
           const { userInfo, token } = data
           set({ ...userInfo, token })
           return true
         } catch (err) {
-          popWeb3Errors(err, "Sign message failed")
+          popWeb3Errors(err, 'Sign message failed')
           return false
         }
       },

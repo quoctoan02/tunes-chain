@@ -29,8 +29,11 @@
       "@hocs/*": ["./src/hocs/*"],
       "@services/*": ["./src/services/*"],
       "@layouts/*": ["./src/layouts/*"],
+      "@layouts": ["./src/layouts/index.ts"],
       "@views/*": ["./src/views/*"],
-      "@utils/*": ["./src/utils/*"]
+      "@utils/*": ["./src/utils/*"],
+      "@types": ["./src/types/index.ts"],
+      "@types/*": ["./src/types/*"]
     }
   },
   "exclude": ["node_modules"]

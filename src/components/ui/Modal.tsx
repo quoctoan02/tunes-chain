@@ -1,6 +1,6 @@
-import { Modal as AntModal, ModalProps as AntModalProps } from "antd"
-import { FC, ReactNode } from "react"
-import { AiOutlineClose } from "react-icons/ai"
+import { Modal as AntModal, ModalProps as AntModalProps } from 'antd'
+import { FC, ReactNode } from 'react'
+import { AiOutlineClose } from 'react-icons/ai'
 
 interface ModalProps extends AntModalProps {
   children: ReactNode

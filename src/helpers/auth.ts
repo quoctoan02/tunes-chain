@@ -1,4 +1,4 @@
-import jwtDecode from "jwt-decode"
+import jwtDecode from 'jwt-decode'
 
 export const verifyJWT = (jwt: string): boolean => {
   try {

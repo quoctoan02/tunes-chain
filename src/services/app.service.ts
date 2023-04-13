@@ -1,7 +1,7 @@
-import { AuthService } from "./auth.service"
-import { BalanceService } from "./balance.service"
-import { UserService } from "./user.service"
-import { WithdrawService } from "./withdraw.service"
+import { AuthService } from './auth.service'
+import { BalanceService } from './balance.service'
+import { UserService } from './user.service'
+import { WithdrawService } from './withdraw.service'
 
 export const Service = {
   auth: new AuthService(),

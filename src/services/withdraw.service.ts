@@ -1,6 +1,6 @@
-import { api } from "@constants/api"
-import { http } from "@helpers/http"
-import { BigNumberish } from "ethers"
+import { api } from '@constants/api'
+import { http } from '@helpers/http'
+import { BigNumberish } from 'ethers'
 
 export class WithdrawService {
   requestWithDraw(currencyId: number, quantity: string) {
@@ -10,7 +10,7 @@ export class WithdrawService {
       value: BigNumberish
       withdrawal: { id: BigNumberish }
     }>({
-      method: "POST",
+      method: 'POST',
       url: api.withdraw.requestWithdraw,
       data: {
         currencyId,
@@ -21,7 +21,7 @@ export class WithdrawService {
 
   getLastWithdraw() {
     return http.request<string>({
-      method: "GET",
+      method: 'GET',
       url: api.withdraw.lastWithdraw,
       params: {},
     })

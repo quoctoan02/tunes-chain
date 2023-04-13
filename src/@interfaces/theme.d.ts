@@ -1,4 +1,4 @@
-type ThemeName = "dark" | "light"
+type ThemeName = 'dark' | 'light'
 
 interface Theme {
   theme: ThemeName
