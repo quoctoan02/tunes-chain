@@ -24,10 +24,15 @@ import {
   Segmented,
   Select,
   Slider,
+  Space,
   Statistic,
   Steps,
   Switch,
   Table,
+  Tabs,
+  TabsProps,
+  Tag,
+  Tooltip,
   Transfer,
   message,
   notification,
@@ -253,6 +258,18 @@ const Example: FC<ExampleProps> = (props) => {
       <Statistic title="Active Users" value={112893} />
 
       <Table dataSource={dataSource} columns={columns} />
+
+      <Tabs defaultActiveKey="1" items={tabItems} />
+
+      <Space size={[0, 8]} wrap>
+        <Tag>Tag 1</Tag>
+        <Tag>Tag 2</Tag>
+        <Tag>Tag 3</Tag>
+      </Space>
+
+      <Tooltip title="Thanks for using antd. Have a nice day!">
+        <Button>Tooltip</Button>
+      </Tooltip>
     </Container>
   )
 }
@@ -340,6 +357,24 @@ const columns = [
     title: "Address",
     dataIndex: "address",
     key: "address",
+  },
+]
+
+const tabItems: TabsProps["items"] = [
+  {
+    key: "1",
+    label: `Tab 1`,
+    children: `Content of Tab Pane 1`,
+  },
+  {
+    key: "2",
+    label: `Tab 2`,
+    children: `Content of Tab Pane 2`,
+  },
+  {
+    key: "3",
+    label: `Tab 3`,
+    children: `Content of Tab Pane 3`,
   },
 ]
 

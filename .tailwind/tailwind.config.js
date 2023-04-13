@@ -2,7 +2,6 @@ const defaultTheme = require("tailwindcss/defaultTheme")
 const dynamicColors = require("./colors")
 
 module.exports = {
-  important: true,
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: ["class", '[data-theme="dark"]'],
   theme: {
