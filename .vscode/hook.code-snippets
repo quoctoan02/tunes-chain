@@ -1,0 +1,7 @@
+{
+  "Print react component with typescript": {
+    "prefix": "tsusehook",
+    "body": ["", "const use${1:Hook} = () => {$2", "  return null;", "};", "", "export default use${1:Hook};"],
+    "description": "Snippet custom hook"
+  }
+}

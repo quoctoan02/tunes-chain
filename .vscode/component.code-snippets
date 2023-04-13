@@ -1,0 +1,17 @@
+{
+  "Print react component with typescript": {
+    "prefix": "tsmcp",
+    "body": [
+      "import { FC } from 'react';",
+      "",
+      "interface ${1:Component}Props {}",
+      "",
+      "const ${1:Component}: FC<${1:Component}Props> = (${2:props}) => {$3",
+      "  return <div>${1:Component}</div>;",
+      "};",
+      "",
+      "export default ${1:Component};"
+    ],
+    "description": "Snippet react component"
+  }
+}

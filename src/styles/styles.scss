@@ -1,0 +1,64 @@
+@import "fonts";
+@import "tailwind";
+@import "popper";
+@import "rc-picker";
+// @import "antd";
+
+[class*="ant"][class*="-primary"] {
+  @apply bg-primary-500 hover:bg-primary-400 disabled:bg-slate-700 disabled:text-slate-300 disabled:hover:bg-slate-800;
+}
+
+.ant-btn {
+  @apply flex items-center justify-center disabled:flex disabled:items-center disabled:justify-center;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  background-color: inherit;
+}
+
+.ant-popconfirm-buttons {
+  @apply flex items-center justify-end gap-1;
+}
+
+:where([class*="css-dev-only-do-not-override"]).ant-select-dropdown
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  @apply bg-slate-700;
+}
+
+:where([class*="css-dev-only-do-not-override"]).ant-transfer .ant-transfer-operation .ant-btn {
+  @apply flex;
+}
+
+:where([class*="css-dev-only-do-not-override"]).ant-slider .ant-slider-step {
+  @apply bg-slate-600;
+}
+
+:where([class*="css-dev-only-do-not-override"]).ant-transfer .ant-transfer-list-content-item-checked {
+  @apply bg-slate-700;
+}
+
+:where([class*="css-dev-only-do-not-override"]).ant-segmented
+  .ant-segmented-item:hover:not(.ant-segmented-item-selected):not(.ant-segmented-item-disabled)::after {
+  @apply dark:bg-slate-700/70;
+}
+
+[type="text"],
+[type="email"],
+[type="url"],
+[type="password"],
+[type="number"],
+[type="date"],
+[type="datetime-local"],
+[type="month"],
+[type="search"],
+[type="tel"],
+[type="time"],
+[type="week"],
+[multiple],
+textarea,
+select {
+  background-color: transparent;
+}

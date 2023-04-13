@@ -1,0 +1,38 @@
+[class*="ant"][class*="-primary"] {
+  @apply bg-primary-500 hover:bg-primary-400 disabled:bg-slate-700 disabled:text-slate-300 disabled:hover:bg-slate-800;
+}
+
+[class*="ant"] {
+  @apply text-content;
+}
+
+.ant-btn {
+  @apply flex items-center justify-center;
+}
+
+:where(.css-dev-only-do-not-override-1vtf12y).ant-modal .ant-modal-content {
+  @apply bg-component  dark:bg-[#27272a];
+
+  & > p,
+  & > span {
+    @apply text-content;
+  }
+}
+
+:where(.css-dev-only-do-not-override-1vtf12y).ant-modal .ant-modal-header {
+  @apply text-content bg-transparent;
+
+  & > * {
+    @apply text-content;
+  }
+}
+
+:where(.css-dev-only-do-not-override-1vtf12y).ant-breadcrumb {
+  a {
+    @apply text-content hover:text-primary-500;
+  }
+}
+
+:where(.css-dev-only-do-not-override-1vtf12y).ant-breadcrumb .ant-breadcrumb-separator {
+  @apply text-content;
+}
