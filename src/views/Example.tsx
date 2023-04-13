@@ -49,7 +49,7 @@ const Context = createContext({ name: 'Default' })
 const Example: FC<ExampleProps> = (props) => {
   const [open, setOpen] = useState(false)
 
-  const [messageApi, contextHolder] = message.useMessage()
+  const [messageApi, contextHolderMessage] = message.useMessage()
   const [notificationApi, contextHolderNotification] = notification.useNotification()
 
   const openNotification = (placement: NotificationPlacement) => {
@@ -100,11 +100,10 @@ const Example: FC<ExampleProps> = (props) => {
         onClick={() => {
           messageApi.success('Hello world')
           openNotification('topRight')
-          console.log('click')
         }}
       >
         {contextHolderNotification}
-        {contextHolder}
+        {contextHolderMessage}
         Show Message
       </Button>
 

@@ -59,6 +59,7 @@ const defaultTheme = (theme: ThemeName): Partial<AliasToken> => {
     colorPrimaryText: tailwindColors[theme].primary[500],
     colorText: tailwindColors[theme].textContent,
     colorPrimary: tailwindColors[theme].primary[500],
+    colorInfo: tailwindColors[theme].sky[500],
     colorBgElevated: tailwindColors[theme].component,
     colorSuccess: tailwindColors[theme].success[500],
     colorError: tailwindColors[theme].error[500],
@@ -71,6 +72,7 @@ const defaultTheme = (theme: ThemeName): Partial<AliasToken> => {
 const tokenTheme: AntTokenTheme = {
   light: {
     ...defaultTheme('light'),
+    colorTextDescription: tailwindColors.dark.slate[300],
   },
   dark: {
     ...defaultTheme('dark'),
@@ -82,7 +84,7 @@ const tokenTheme: AntTokenTheme = {
     colorBgContainer: tailwindColors.dark.slate[700],
     controlOutline: tailwindColors.dark.slate[500],
     controlItemBgActiveDisabled: tailwindColors.dark.slate[700],
-    colorTextDisabled: tailwindColors.dark.slate[800],
+    colorTextDisabled: tailwindColors.dark.slate[600],
     colorBorder: tailwindColors.dark.slate[700],
     colorTextPlaceholder: tailwindColors.dark.slate[700],
     colorBgLayout: tailwindColors.dark.slate[600],

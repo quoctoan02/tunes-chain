@@ -1,12 +1,12 @@
+import { Button } from '@components/ui'
 import { DEFAULT_CHAIN_ID } from '@config/chains.config'
 import { ConnectorIds, connectorInstances } from '@config/wagmi.config'
 import { wallets } from '@config/wallets.config'
-import { Popper } from '@helpers/Popper'
 import { useUser } from '@hooks/stores/useUser'
 import { Modal } from 'antd'
 import { useCallback } from 'react'
 import { isDesktop } from 'react-device-detect'
-import { AiOutlineClose } from 'react-icons/ai'
+import { AiFillQuestionCircle, AiOutlineClose } from 'react-icons/ai'
 import { toast } from 'react-toastify'
 import { UserRejectedRequestError, useAccount, useConnect, useDisconnect } from 'wagmi'
 
@@ -67,7 +67,7 @@ export const useActive = () => {
   const connect = () => {
     Modal.confirm({
       content: (
-        <div className=" w-full rounded-2xl p-2">
+        <div className=" w-full rounded-2xl  p-2">
           <h6 className="text-content -mt-3  mb-5 text-lg font-medium">Connect Wallet</h6>
           <div className="grid grid-cols-3 gap-4">
             {wallets.map((wallet) =>
@@ -95,17 +95,50 @@ export const useActive = () => {
   }
 
   const disconnect = useCallback(async () => {
-    const { isConfirmed } = await Popper.fire({
-      title: 'Confirm',
-      html: <p className="text-center font-bold">Disconnect now ?</p>,
-      icon: 'question',
-      width: 400,
-      showCancelButton: true,
+    Modal.confirm({
+      content: (
+        <div className=" w-full rounded-2xl  p-2">
+          <h6 className="text-content mb-5  w-full text-center text-lg font-medium">Disconnect now ?</h6>
+          <div className="flex w-full items-center justify-center ">
+            <AiFillQuestionCircle className="text-8xl !text-slate-500" />
+          </div>
+          <div className="mt-6 flex items-center justify-center gap-5">
+            <Button className="w-full" type="default" onClick={() => Modal.destroyAll()}>
+              Cancel
+            </Button>
+            <Button
+              className="w-full"
+              onClick={() => {
+                disconnectAsync()
+                logout()
+                Modal.destroyAll()
+              }}
+            >
+              OK
+            </Button>
+          </div>
+        </div>
+      ),
+      centered: true,
+      icon: null,
+      closable: true,
+      footer: null,
+      width: 315,
+      maskClosable: true,
+      closeIcon: <AiOutlineClose className="!text-content text-xl" />,
     })
-    if (isConfirmed) {
-      disconnectAsync()
-      logout()
-    }
+
+    // const { isConfirmed } = await Popper.fire({
+    //   title: 'Confirm',
+    //   html: <p className="text-center font-bold">Disconnect now ?</p>,
+    //   icon: 'question',
+    //   width: 400,
+    //   showCancelButton: true,
+    // })
+    // if (isConfirmed) {
+    //   disconnectAsync()
+    //   logout()
+    // }
   }, [disconnectAsync, logout])
 
   return { connect, disconnect, isConnecting, isConnected, account }

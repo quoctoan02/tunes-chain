@@ -21,7 +21,8 @@ button,
   background-color: inherit;
 }
 
-.ant-popconfirm-buttons {
+.ant-popconfirm-buttons,
+.ant-modal-confirm-btns {
   @apply flex items-center justify-end gap-1;
 }
 
@@ -57,8 +58,12 @@ button,
   @apply bg-slate-300 dark:bg-slate-700;
 }
 
-.ant-modal .ant-modal-content {
-  @apply bg-component  dark:bg-[#27272a];
+.ant-modal [class*='ant-modal-content'] {
+  @apply bg-component  w-full dark:bg-[#27272a];
+}
+
+.ant-modal .ant-modal-confirm-content {
+  @apply w-full;
 }
 
 .ant-modal .ant-modal-header {

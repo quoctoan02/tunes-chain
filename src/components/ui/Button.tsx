@@ -21,6 +21,7 @@ const Button: FC<ButtonProps> = ({ onClick, children, type = 'primary', async = 
       type={type}
       loading={isLoading}
       disabled={isLoading}
+      size="large"
       {...props}
     >
       {children}
