@@ -1,0 +1,37 @@
+// html {
+//   font-size: 100%;
+//   @media (min-width: 768px) {
+//     font-size: 85%; // 1 rem = 13.6px
+//   }
+//   @media (min-width: 1536px) {
+//     font-size: 100%;
+//   }
+// }
+
+[type='text'],
+[type='email'],
+[type='url'],
+[type='password'],
+[type='number'],
+[type='date'],
+[type='datetime-local'],
+[type='month'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='week'],
+[multiple],
+textarea,
+select {
+  background-color: transparent;
+}
+
+// Custom React Toastify
+.Toastify {
+  .Toastify__toast.Toastify__toast--default {
+    // @apply bg-black;
+  }
+  .Toastify__close-button.Toastify__close-button--colored {
+    @apply text-slate-700;
+  }
+}

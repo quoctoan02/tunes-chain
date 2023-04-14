@@ -78,7 +78,7 @@ const Example: FC<ExampleProps> = (props) => {
       <Button onClick={() => toastContent({ message: 'Toast message', type: 'success' })}>Toast Message</Button>
 
       <Dropdown menu={{ items }} placement="bottomLeft" arrow>
-        <Button>bottomLeft</Button>
+        <Button>Dropdown</Button>
       </Dropdown>
       <Breadcrumb
         items={[

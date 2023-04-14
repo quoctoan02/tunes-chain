@@ -1,33 +1,5 @@
 @import 'fonts';
 @import 'tailwind';
 @import 'popper';
-@import 'rc-picker';
 @import 'antd';
-
-[type='text'],
-[type='email'],
-[type='url'],
-[type='password'],
-[type='number'],
-[type='date'],
-[type='datetime-local'],
-[type='month'],
-[type='search'],
-[type='tel'],
-[type='time'],
-[type='week'],
-[multiple],
-textarea,
-select {
-  background-color: transparent;
-}
-
-// Custom React Toastify
-.Toastify {
-  .Toastify__toast.Toastify__toast--default {
-    // @apply bg-black;
-  }
-  .Toastify__close-button.Toastify__close-button--colored {
-    @apply text-slate-700;
-  }
-}
+@import 'global';
