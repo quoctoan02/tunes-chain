@@ -42,20 +42,13 @@ button,
   @apply dark:bg-slate-700/70;
 }
 
-.ant-pagination .ant-pagination-disabled .ant-pagination-item-link,
-.ant-pagination .ant-pagination-disabled:hover .ant-pagination-item-link {
-  @apply dark:bg-slate-500;
-}
+// .ant-pagination .ant-pagination-disabled .ant-pagination-item-link,
+// .ant-pagination .ant-pagination-disabled:hover .ant-pagination-item-link {
+//   @apply dark:bg-slate-500;
+// }
 
-.ant-table-wrapper .ant-table-thead > tr > th,
-.ant-table-wrapper .ant-table-thead > tr > td {
-  @apply bg-transparent;
-}
-
-.ant-table-wrapper .ant-table-tbody > tr.ant-table-row:hover > th,
-.ant-table-wrapper .ant-table-tbody > tr.ant-table-row:hover > td,
-.ant-table-wrapper .ant-table-tbody > tr > th.ant-table-cell-row-hover > td.ant-table-cell-row-hover {
-  @apply bg-slate-300 dark:bg-slate-700;
+.ant-table-wrapper .ant-table-thead th.ant-table-column-sort {
+  @apply bg-slate-400;
 }
 
 .ant-modal [class*='ant-modal-content'] {

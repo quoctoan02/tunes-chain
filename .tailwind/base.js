@@ -4,7 +4,8 @@ module.exports = plugin(({ addBase }) => {
   addBase({
     html: {
       '@apply antialiased text-content': {},
-      '@apply scrollbar scrollbar-w-px scrollbar-track-transparent scrollbar-thumb-primary scrollbar-thumb-rounded': {},
+      '@apply scrollbar scrollbar-w-2 scrollbar-track-transparent scrollbar-thumb-primary scrollbar-thumb-rounded scroll-smooth':
+        {},
       lineHeight: '1.5',
       textRendering: 'optimizeLegibility',
       textSizeAdjust: '100%',

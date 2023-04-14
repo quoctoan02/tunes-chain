@@ -41,6 +41,7 @@ import {
 import { NotificationPlacement } from 'antd/es/notification/interface'
 import { SliderMarks } from 'antd/es/slider'
 import { FC, createContext, useState } from 'react'
+import TableExample from './TableExample'
 
 interface ExampleProps {}
 
@@ -272,6 +273,8 @@ const Example: FC<ExampleProps> = (props) => {
       <Tooltip title="Thanks for using antd. Have a nice day!">
         <Button>Tooltip</Button>
       </Tooltip>
+
+      <TableExample />
     </Container>
   )
 }
