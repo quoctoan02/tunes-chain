@@ -1,6 +1,6 @@
-import { SearchOutlined, UserOutlined } from '@ant-design/icons'
+import { UserOutlined } from '@ant-design/icons'
 import { Container } from '@components/Layout'
-import { Button, Modal } from '@components/ui'
+import { Button } from '@components/ui'
 import { toastContent } from '@helpers/toastContent'
 import {
   Avatar,
@@ -41,6 +41,8 @@ import {
 import { NotificationPlacement } from 'antd/es/notification/interface'
 import { SliderMarks } from 'antd/es/slider'
 import { FC, createContext, useState } from 'react'
+import ButtonExample from './ButtonExample'
+import ModalExample from './ModalExample'
 import TableExample from './TableExample'
 
 interface ExampleProps {}
@@ -67,6 +69,7 @@ const Example: FC<ExampleProps> = (props) => {
 
   return (
     <Container size="md" className="flex flex-col gap-4 py-20">
+      <ButtonExample />
       <Typography.Paragraph
         copyable={{
           text: 'Text was copied',
@@ -75,13 +78,8 @@ const Example: FC<ExampleProps> = (props) => {
       >
         Copy Text
       </Typography.Paragraph>
-      <Button type="primary" size="large" onClick={() => setOpen(true)} icon={<SearchOutlined />}>
-        Modal
-      </Button>
-      <Modal open={open} onCancel={() => setOpen(false)} title="Title">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio rerum officiis consequuntur perspiciatis
-        sapiente tenetur neque nihil alias ea at ipsa nulla ab, maiores accusamus culpa hic incidunt tempore reiciendis?
-      </Modal>
+
+      <ModalExample />
 
       <div className="flex items-center gap-4">
         <Button
@@ -122,6 +120,7 @@ const Example: FC<ExampleProps> = (props) => {
       />
 
       <Button
+        type="primary"
         onClick={() => {
           messageApi.success('Hello world')
           openNotification('topRight')
@@ -140,7 +139,7 @@ const Example: FC<ExampleProps> = (props) => {
         okText="Yes"
         cancelText="No"
       >
-        <Button>Pop Confirm</Button>
+        <Button type="primary">Pop Confirm</Button>
       </Popconfirm>
 
       <Progress percent={30} />

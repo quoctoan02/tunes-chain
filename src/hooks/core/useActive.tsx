@@ -107,7 +107,8 @@ export const useActive = () => {
               Cancel
             </Button>
             <Button
-              className="w-full"
+              className="bg-primary-500 w-full"
+              type="primary"
               onClick={() => {
                 disconnectAsync()
                 logout()
