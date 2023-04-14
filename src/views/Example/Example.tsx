@@ -1,12 +1,11 @@
 import { SearchOutlined, UserOutlined } from '@ant-design/icons'
 import { Container } from '@components/Layout'
-import { Modal } from '@components/ui'
+import { Button, Modal } from '@components/ui'
 import { toastContent } from '@helpers/toastContent'
 import {
   Avatar,
   Badge,
   Breadcrumb,
-  Button,
   Card,
   Checkbox,
   Collapse,
@@ -35,6 +34,7 @@ import {
   Tag,
   Tooltip,
   Transfer,
+  Typography,
   message,
   notification,
 } from 'antd'
@@ -67,15 +67,39 @@ const Example: FC<ExampleProps> = (props) => {
 
   return (
     <Container size="md" className="flex flex-col gap-4 py-20">
+      <Typography.Paragraph
+        copyable={{
+          text: 'Text was copied',
+          tooltips: ['Click here to copy', 'Copied!!'],
+        }}
+      >
+        Copy Text
+      </Typography.Paragraph>
       <Button type="primary" size="large" onClick={() => setOpen(true)} icon={<SearchOutlined />}>
-        Click me!
+        Modal
       </Button>
       <Modal open={open} onCancel={() => setOpen(false)} title="Title">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio rerum officiis consequuntur perspiciatis
         sapiente tenetur neque nihil alias ea at ipsa nulla ab, maiores accusamus culpa hic incidunt tempore reiciendis?
       </Modal>
 
-      <Button onClick={() => toastContent({ message: 'Toast message', type: 'success' })}>Toast Message</Button>
+      <div className="flex items-center gap-4">
+        <Button
+          className="bg-success-500"
+          onClick={() => toastContent({ message: 'Toast message custom', type: 'success' })}
+        >
+          Toast Success
+        </Button>
+        <Button className="bg-sky-500" onClick={() => toastContent({ message: 'Toast message custom', type: 'info' })}>
+          Toast Info
+        </Button>
+        <Button
+          className="bg-error-500"
+          onClick={() => toastContent({ message: 'Toast message custom', type: 'error' })}
+        >
+          Toast Error
+        </Button>
+      </div>
 
       <Dropdown menu={{ items }} placement="bottomLeft" arrow>
         <Button>Dropdown</Button>

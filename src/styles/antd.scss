@@ -3,7 +3,7 @@
 }
 
 button.ant-btn {
-  @apply text-content disabled:text-content flex items-center justify-center shadow-none disabled:flex disabled:items-center disabled:justify-center;
+  @apply text-content disabled:text-content flex items-center justify-center shadow-none hover:enabled:opacity-80 disabled:flex disabled:cursor-not-allowed disabled:items-center disabled:justify-center disabled:opacity-40;
 }
 
 button.ant-switch {
@@ -14,12 +14,12 @@ button.ant-switch {
   @apply flex;
 }
 
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-  background-color: inherit;
-}
+// button,
+// [type='button'],
+// [type='reset'],
+// [type='submit'] {
+//   // background-color: inherit;
+// }
 
 .ant-popconfirm-buttons,
 .ant-modal-confirm-btns {

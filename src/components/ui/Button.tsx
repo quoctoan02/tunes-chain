@@ -5,7 +5,7 @@ interface ButtonProps extends AntButtonProps {
   async?: boolean
 }
 
-const Button: FC<ButtonProps> = ({ onClick, children, type = 'primary', async = false, ...props }) => {
+const Button: FC<ButtonProps> = ({ onClick, children, type = 'ghost', async = false, ...props }) => {
   const [isLoading, setIsLoading] = useState(false)
 
   const handleAsyncClick = async (e: MouseEvent<HTMLButtonElement>) => {
@@ -21,7 +21,6 @@ const Button: FC<ButtonProps> = ({ onClick, children, type = 'primary', async = 
       type={type}
       loading={isLoading}
       disabled={isLoading}
-      size="large"
       {...props}
     >
       {children}
