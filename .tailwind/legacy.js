@@ -2,7 +2,7 @@ const plugin = require('tailwindcss/plugin')
 
 const button = {
   // Default
-  '.btn': {
+  '.tw-btn': {
     '@apply inline-flex font-medium px-4 py-0 items-center gap-2 justify-center transition-colors cursor-pointer': {},
     // Active
     '&:active': {

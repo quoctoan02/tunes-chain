@@ -21,16 +21,16 @@
     .swal2-actions {
       @apply order-4 m-0 flex-row-reverse gap-2 py-6;
       button {
-        @apply btn btn-normal btn-md m-0 focus:shadow-none focus:outline-none;
+        @apply tw-btn tw-btn-normal tw-btn-md m-0 focus:shadow-none focus:outline-none;
       }
       .swal2-confirm {
-        @apply btn-primary;
+        @apply tw-btn-primary;
       }
       .swal2-cancel {
-        @apply btn-outlined border border-solid bg-transparent;
+        @apply tw-btn-outlined border border-solid bg-transparent;
       }
       .swal2-deny {
-        @apply btn-primary-outlined border border-solid bg-transparent;
+        @apply tw-btn-primary-outlined border border-solid bg-transparent;
       }
     }
   }
