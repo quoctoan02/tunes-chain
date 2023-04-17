@@ -1,6 +1,6 @@
 const plugin = require('tailwindcss/plugin')
 
-module.exports = plugin(({ addBase }) => {
+module.exports = plugin(({ addBase, theme }) => {
   addBase({
     html: {
       '@apply antialiased text-content': {},
@@ -13,7 +13,7 @@ module.exports = plugin(({ addBase }) => {
       overflowX: 'hidden',
     },
     body: {
-      '@apply bg-body transition-all': {},
+      '@apply bg-body transition-all font-sans': {},
       position: 'relative',
       minHeight: '100%',
       fontFeatureSettings: "'kern'",

@@ -2,10 +2,6 @@
   @apply bg-primary-500 hover:bg-primary-400 disabled:bg-slate-700 disabled:text-slate-300 disabled:hover:bg-slate-800;
 }
 
-a:hover {
-  color: inherit;
-}
-
 button.ant-btn {
   @apply text-content disabled:text-content flex items-center justify-center shadow-none hover:enabled:opacity-80 disabled:flex disabled:cursor-not-allowed disabled:items-center disabled:justify-center disabled:opacity-40;
 }
@@ -17,13 +13,6 @@ button.ant-switch {
 .ant-transfer .ant-transfer-operation .ant-btn {
   @apply flex;
 }
-
-// button,
-// [type='button'],
-// [type='reset'],
-// [type='submit'] {
-//   // background-color: inherit;
-// }
 
 .ant-popconfirm-buttons,
 .ant-modal-confirm-btns {
@@ -51,7 +40,7 @@ button.ant-switch {
 }
 
 .ant-modal [class*='ant-modal-content'] {
-  @apply bg-component  w-full dark:bg-[#27272a];
+  @apply bg-component w-full dark:bg-[#27272a];
 }
 
 .ant-modal .ant-modal-confirm-content {
@@ -75,21 +64,29 @@ button.ant-switch {
   @apply dark:text-slate-600;
 }
 
-[type='text']:focus,
-[type='email']:focus,
-[type='url']:focus,
-[type='password']:focus,
-[type='number']:focus,
-[type='date']:focus,
-[type='datetime-local']:focus,
-[type='month']:focus,
-[type='search']:focus,
-[type='tel']:focus,
-[type='time']:focus,
-[type='week']:focus,
-[multiple]:focus,
-textarea:focus,
-select:focus {
-  --tw-ring-color: @apply text-primary-500;
-  @apply border-primary-500/90;
+input.ant-input {
+  padding: 4px 11px;
+  font-size: 14px;
+  line-height: 1.5714285714285714;
+  list-style: none;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  min-width: 0;
+  background-image: none;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 6px;
+  border-color: #d9d9d9;
+}
+
+input.ant-input.ant-input-lg {
+  padding: 7px 11px;
+  font-size: 16px;
+  line-height: 1.5;
+  border-radius: 8px;
+}
+input.ant-input.ant-input-sm {
+  padding: 0px 7px;
+  border-radius: 4px;
 }

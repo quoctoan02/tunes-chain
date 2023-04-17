@@ -196,6 +196,10 @@ const Example: FC<ExampleProps> = (props) => {
             <Input />
           </Form.Item>
 
+          <Form.Item label="email" name="email" rules={[{ required: true, message: 'Please input your email!' }]}>
+            <Input />
+          </Form.Item>
+
           <Form.Item
             label="Password"
             name="password"

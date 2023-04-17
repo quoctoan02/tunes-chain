@@ -26,6 +26,29 @@ select {
   background-color: transparent;
 }
 
+a:hover {
+  color: inherit;
+}
+
+[type='text']:focus,
+[type='email']:focus,
+[type='url']:focus,
+[type='password']:focus,
+[type='number']:focus,
+[type='date']:focus,
+[type='datetime-local']:focus,
+[type='month']:focus,
+[type='search']:focus,
+[type='tel']:focus,
+[type='time']:focus,
+[type='week']:focus,
+[multiple]:focus,
+textarea:focus,
+select:focus {
+  --tw-ring-color: @apply text-primary-500;
+  @apply border-primary-500/90;
+}
+
 // Custom React Toastify
 .Toastify {
   .Toastify__toast.Toastify__toast--default {
