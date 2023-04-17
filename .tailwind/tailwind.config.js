@@ -35,9 +35,6 @@ module.exports = {
     // !!! DO NOT CHANGE THE ORDER
     require('./base'),
     require('./legacy'),
-    require('@tailwindcss/forms')({
-      strategy: 'base',
-    }),
     require('@bonehub/tailwind-dynamic-colors')(dynamicColors),
     require('tailwindcss-animate'),
     require('tailwind-scrollbar')({ nocompatible: true }),
