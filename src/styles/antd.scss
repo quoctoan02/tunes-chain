@@ -2,6 +2,10 @@
   @apply bg-primary-500 hover:bg-primary-400 disabled:bg-slate-700 disabled:text-slate-300 disabled:hover:bg-slate-800;
 }
 
+a:hover {
+  color: inherit;
+}
+
 button.ant-btn {
   @apply text-content disabled:text-content flex items-center justify-center shadow-none hover:enabled:opacity-80 disabled:flex disabled:cursor-not-allowed disabled:items-center disabled:justify-center disabled:opacity-40;
 }
@@ -42,11 +46,6 @@ button.ant-switch {
   @apply dark:bg-slate-700/70;
 }
 
-// .ant-pagination .ant-pagination-disabled .ant-pagination-item-link,
-// .ant-pagination .ant-pagination-disabled:hover .ant-pagination-item-link {
-//   @apply dark:bg-slate-500;
-// }
-
 .ant-table-wrapper .ant-table-thead th.ant-table-column-sort {
   @apply bg-slate-400;
 }
@@ -65,4 +64,32 @@ button.ant-switch {
 
 .ant-progress .ant-progress-bg {
   @apply bg-primary-500;
+}
+
+.ant-typography .ant-typography-copy {
+  @apply text-primary-500;
+}
+
+.ant-cascader-dropdown .ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled),
+.ant-cascader-dropdown .ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled):hover {
+  @apply dark:text-slate-600;
+}
+
+[type='text']:focus,
+[type='email']:focus,
+[type='url']:focus,
+[type='password']:focus,
+[type='number']:focus,
+[type='date']:focus,
+[type='datetime-local']:focus,
+[type='month']:focus,
+[type='search']:focus,
+[type='tel']:focus,
+[type='time']:focus,
+[type='week']:focus,
+[multiple]:focus,
+textarea:focus,
+select:focus {
+  --tw-ring-color: @apply text-primary-500;
+  @apply border-primary-500/90;
 }

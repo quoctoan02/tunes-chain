@@ -58,9 +58,6 @@ const AntProvider: FC<AntProviderProps> = ({ children }) => {
           InputNumber: {
             colorBgContainer: 'transparent',
           },
-          Table: {
-            // colorBgContainer: theme === 'dark' ? tailwindColors.dark.slate[800] : '',
-          },
         },
       }}
     >
@@ -94,6 +91,7 @@ const defaultTheme = (theme: ThemeName): Partial<AliasToken> => {
 
     colorIcon: tailwindColors[theme].textContent,
     colorTextLabel: tailwindColors[theme].textContent,
+    colorWhite: tailwindColors[theme].white,
 
     // Override tailwind colors instead of antd colors
     ...mapTailwindColorsToAntColors('blue', tailwindColors[theme].blue),
@@ -119,7 +117,7 @@ const tokenTheme: AntTokenTheme = {
     colorFillSecondary: tailwindColors.dark.slate[400],
     colorTextSecondary: tailwindColors.dark.slate[500],
     colorSplit: tailwindColors.dark.slate[500],
-    colorTextDescription: tailwindColors.dark.slate[300],
+    colorTextDescription: tailwindColors.dark.slate[400],
     colorBgTextHover: tailwindColors.dark.slate[500],
     colorBgContainer: tailwindColors.dark.slate[700],
     controlOutline: tailwindColors.dark.slate[500],
@@ -127,7 +125,8 @@ const tokenTheme: AntTokenTheme = {
     colorTextDisabled: tailwindColors.dark.slate[600],
     colorBorder: tailwindColors.dark.slate[700],
     colorTextPlaceholder: tailwindColors.dark.slate[700],
-    colorBgLayout: tailwindColors.dark.slate[600],
+    colorBgLayout: tailwindColors.dark.slate[800],
+
     // colorLinkHover: tailwindColors.dark.slate[700],
   },
 }

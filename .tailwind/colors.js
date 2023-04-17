@@ -33,8 +33,8 @@ module.exports = {
   dark: {
     default: colors.stone[800],
     primary: {
-      DEFAULT: colors.sky[500],
-      ...colors.sky,
+      DEFAULT: colors.emerald[500],
+      ...colors.emerald,
     },
     secondary: colors.emerald[500],
     body: colors.stone[900],

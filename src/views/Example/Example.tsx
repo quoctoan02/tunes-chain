@@ -43,6 +43,7 @@ import { NotificationPlacement } from 'antd/es/notification/interface'
 import { SliderMarks } from 'antd/es/slider'
 import { FC, createContext, useState } from 'react'
 import ButtonExample from './ButtonExample'
+import CascaderExample from './CascaderExample'
 import ModalExample from './ModalExample'
 import TableExample from './TableExample'
 
@@ -106,8 +107,8 @@ const Example: FC<ExampleProps> = (props) => {
         </Button>
       </div>
 
-      <Dropdown menu={{ items }} placement="bottomLeft" arrow>
-        <Button>Dropdown</Button>
+      <Dropdown menu={{ items }} placement="bottom" arrow>
+        <Button type="primary">Dropdown</Button>
       </Dropdown>
       <Breadcrumb
         items={[
@@ -151,6 +152,7 @@ const Example: FC<ExampleProps> = (props) => {
 
       <Progress percent={30} />
       <Divider />
+      <Divider>Text Content</Divider>
       <Pagination defaultCurrent={6} total={500} />
 
       <Steps
@@ -171,6 +173,8 @@ const Example: FC<ExampleProps> = (props) => {
           },
         ]}
       />
+
+      <CascaderExample />
       <div className="form">
         <Checkbox>Checkbox</Checkbox>
 
