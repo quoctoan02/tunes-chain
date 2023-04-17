@@ -36,10 +36,10 @@ const NotFoundPage: NextPageWithLayout = () => {
       <Container>
         <div className="flex min-h-screen flex-col items-center justify-center py-20 pt-5">
           <h1 className="text-5xl font-bold uppercase tracking-wider ">404</h1>
-          <p className="text-4xl font-semibold uppercase text-blue-500">Page not found</p>
+          <p className="text-primary-500 text-4xl font-semibold uppercase">Page not found</p>
           <p className="mt-3 text-lg">
             Automatically return to the homepage later {time} seconds or{' '}
-            <Link className="text-blue-400 underline hover:text-blue-500" href={routePath.home}>
+            <Link className="text-primary-400 hover:text-primary-500 underline" href={routePath.home}>
               click here
             </Link>
           </p>

@@ -18,7 +18,7 @@ interface AntTokenTheme {
 
 const { theme: tailwindTheme } = resolveConfig(tailwindConfig as any)
 
-const tailwindColors = {
+export const tailwindColors = {
   light: { ...defaultTailwindColors, ...tailwindTheme.colors, ...dynamicColors.light },
   dark: { ...defaultTailwindColors, ...tailwindTheme.colors, ...dynamicColors.dark },
 }
