@@ -37,6 +37,7 @@ import {
   Typography,
   message,
   notification,
+  theme,
 } from 'antd'
 import { NotificationPlacement } from 'antd/es/notification/interface'
 import { SliderMarks } from 'antd/es/slider'
@@ -49,8 +50,14 @@ interface ExampleProps {}
 
 const Context = createContext({ name: 'Default' })
 
+const { useToken } = theme
+
 const Example: FC<ExampleProps> = (props) => {
   const [open, setOpen] = useState(false)
+
+  const { theme, token } = useToken()
+
+  // console.log({ theme, token })
 
   const [messageApi, contextHolderMessage] = message.useMessage()
   const [notificationApi, contextHolderNotification] = notification.useNotification()

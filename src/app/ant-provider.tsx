@@ -4,6 +4,7 @@ import { useTheme } from '@hooks/stores/useTheme'
 import { ConfigProvider } from 'antd'
 import { AliasToken } from 'antd/es/theme/internal'
 import { FC, ReactNode } from 'react'
+import defaultTailwindColors from 'tailwindcss/colors'
 import resolveConfig from 'tailwindcss/resolveConfig'
 
 interface AntProviderProps {
@@ -18,11 +19,27 @@ interface AntTokenTheme {
 const { theme: tailwindTheme } = resolveConfig(tailwindConfig as any)
 
 const tailwindColors = {
-  light: { ...tailwindTheme.colors, ...dynamicColors.light },
-  dark: { ...tailwindTheme.colors, ...dynamicColors.dark },
+  light: { ...defaultTailwindColors, ...tailwindTheme.colors, ...dynamicColors.light },
+  dark: { ...defaultTailwindColors, ...tailwindTheme.colors, ...dynamicColors.dark },
 }
 
-console.log({ tailwindTheme })
+console.log({ tailwindTheme, tailwindColors })
+
+const mapTailwindColorsToAntColors = (colorName: string, color) => {
+  const colors = Object.keys(color)
+
+  return colors.reduce((prev, cur, index) => {
+    if (index > 0 && index < 11) {
+      return {
+        ...prev,
+        [`${colorName}`]: color[500],
+        [`${colorName}${index}`]: color[cur],
+        [`${colorName}-${index}`]: color[cur],
+      }
+    }
+    return prev
+  }, {})
+}
 
 const fontFamily = tailwindTheme.fontFamily.sans.join(', ')
 
@@ -33,6 +50,7 @@ const AntProvider: FC<AntProviderProps> = ({ children }) => {
     <ConfigProvider
       theme={{
         token: tokenTheme[theme],
+        // algorithm: theme === 'dark' ? antTheme.darkAlgorithm : antTheme.defaultAlgorithm,
         components: {
           Input: {
             colorBgContainer: 'transparent',
@@ -63,8 +81,10 @@ const defaultTheme = (theme: ThemeName): Partial<AliasToken> => {
     // Config colors
     colorTextBase: tailwindColors[theme].textContent,
     colorPrimaryText: tailwindColors[theme].primary[500],
-    colorText: tailwindColors[theme].textContent,
+    colorPrimaryBorder: tailwindColors[theme].primary[500],
     colorPrimary: tailwindColors[theme].primary[500],
+
+    colorText: tailwindColors[theme].textContent,
     colorBgElevated: tailwindColors[theme].component,
 
     colorInfo: tailwindColors[theme].sky[500],
@@ -72,9 +92,19 @@ const defaultTheme = (theme: ThemeName): Partial<AliasToken> => {
     colorError: tailwindColors[theme].error[500],
     colorWarning: tailwindColors[theme].warning[500],
 
-    colorPrimaryBorder: tailwindColors[theme].primary[500],
     colorIcon: tailwindColors[theme].textContent,
     colorTextLabel: tailwindColors[theme].textContent,
+
+    // Override tailwind colors instead of antd colors
+    ...mapTailwindColorsToAntColors('blue', tailwindColors[theme].blue),
+    ...mapTailwindColorsToAntColors('cyan', tailwindColors[theme].cyan),
+    ...mapTailwindColorsToAntColors('purple', tailwindColors[theme].purple),
+    ...mapTailwindColorsToAntColors('green', tailwindColors[theme].green),
+    ...mapTailwindColorsToAntColors('yellow', tailwindColors[theme].yellow),
+    ...mapTailwindColorsToAntColors('red', tailwindColors[theme].red),
+    ...mapTailwindColorsToAntColors('lime', tailwindColors[theme].lime),
+    ...mapTailwindColorsToAntColors('gray', tailwindColors[theme].gray),
+    ...mapTailwindColorsToAntColors('pink', tailwindColors[theme].pink),
   }
 }
 
