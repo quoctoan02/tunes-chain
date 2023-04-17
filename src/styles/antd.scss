@@ -62,3 +62,7 @@ button.ant-switch {
 .ant-modal .ant-modal-header {
   @apply dark:bg-transparent;
 }
+
+.ant-progress .ant-progress-bg {
+  @apply bg-primary-500;
+}
