@@ -1,4 +1,5 @@
 import { UserOutlined } from '@ant-design/icons'
+import { tailwindColors } from '@app/ant-provider'
 import { Container } from '@components/Layout'
 import { Button } from '@components/ui'
 import { toastContent } from '@helpers/toastContent'
@@ -356,7 +357,7 @@ const marks: SliderMarks = {
   37: '37°C',
   100: {
     style: {
-      color: '#f50',
+      color: tailwindColors.dark.red[400],
     },
     label: <strong>100°C</strong>,
   },

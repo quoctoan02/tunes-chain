@@ -22,7 +22,6 @@ const Header: FC<HeaderProps> = (props) => {
     setIsOpenDrawer(false)
   }
 
-  const abc = {}
 
   return (
     <>

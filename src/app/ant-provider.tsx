@@ -25,7 +25,7 @@ export const tailwindColors = {
 
 console.log({ tailwindTheme, tailwindColors })
 
-const mapTailwindColorsToAntColors = (colorName: string, color) => {
+const mapTailwindColorsToAntColors = (colorName: string, color: any) => {
   const colors = Object.keys(color)
 
   return colors.reduce((prev, cur, index) => {
@@ -111,16 +111,16 @@ const defaultTheme = (theme: ThemeName): Partial<AliasToken> => {
 const tokenTheme: AntTokenTheme = {
   light: {
     ...defaultTheme('light'),
-    colorTextDescription: tailwindColors.dark.slate[300],
+    colorTextDescription: tailwindColors.light.slate[300],
   },
   dark: {
     ...defaultTheme('dark'),
     colorBgElevated: tailwindColors.dark.component,
     colorFillSecondary: tailwindColors.dark.slate[800],
     colorTextSecondary: tailwindColors.dark.slate[500],
-    colorSplit: tailwindColors.dark.slate[500],
+    colorSplit: tailwindColors.dark.slate[600],
     colorTextDescription: tailwindColors.dark.slate[400],
-    colorBgTextHover: tailwindColors.dark.slate[500],
+    colorBgTextHover: tailwindColors.dark.slate[600],
     colorBgContainer: tailwindColors.dark.slate[700],
     controlOutline: tailwindColors.dark.slate[500],
     controlItemBgActiveDisabled: tailwindColors.dark.slate[700],
