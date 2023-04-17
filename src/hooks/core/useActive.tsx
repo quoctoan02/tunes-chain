@@ -103,12 +103,15 @@ export const useActive = () => {
             <AiFillQuestionCircle className="text-8xl !text-slate-500" />
           </div>
           <div className="mt-6 flex items-center justify-center gap-5">
-            <Button className="w-full" type="default" onClick={() => Modal.destroyAll()}>
+            <Button
+              className="hover:text-primary-500 hover:border-primary-500 w-full"
+              type="default"
+              onClick={() => Modal.destroyAll()}
+            >
               Cancel
             </Button>
             <Button
-              className="bg-primary-500 w-full"
-              type="primary"
+              className="bg-primary-500 hover:bg-primary-600 w-full"
               onClick={() => {
                 disconnectAsync()
                 logout()

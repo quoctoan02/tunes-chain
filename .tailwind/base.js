@@ -21,5 +21,22 @@ module.exports = plugin(({ addBase, theme }) => {
     '::selection': {
       '@apply text-content bg-primary': {},
     },
+    a: {
+      color: 'inherit',
+      textDecoration: 'none',
+    },
+    '*': {
+      margin: 0,
+      padding: 0,
+      boxSizing: 'border-box',
+    },
+    'img, video': {
+      maxWidth: '100%',
+      height: 'auto',
+    },
+    'img,svg,video,canvas,audio,iframe, embed,object': {
+      display: 'block',
+      verticalAlign: 'middle',
+    },
   })
 })

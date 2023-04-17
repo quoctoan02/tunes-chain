@@ -1,13 +1,12 @@
-[class*='ant'][class*='-primary'] {
-  @apply bg-primary-500 hover:bg-primary-400 disabled:bg-slate-700 disabled:text-slate-300 disabled:hover:bg-slate-800;
-}
-
 button.ant-btn {
-  @apply text-content disabled:text-content flex items-center justify-center shadow-none hover:enabled:opacity-80 disabled:flex disabled:cursor-not-allowed disabled:items-center disabled:justify-center disabled:opacity-40;
+  @apply disabled:text-content flex items-center justify-center  hover:enabled:opacity-80 disabled:flex disabled:cursor-not-allowed disabled:items-center disabled:justify-center disabled:opacity-40;
 }
 
-button.ant-switch {
-  @apply bg-slate-300;
+.ant-btn-dashed {
+  background-color: transparent;
+}
+.ant-btn-primary {
+  @apply shadow-lg;
 }
 
 .ant-transfer .ant-transfer-operation .ant-btn {
@@ -19,36 +18,22 @@ button.ant-switch {
   @apply flex items-center justify-end gap-1;
 }
 
-.ant-select-dropdown .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
-  @apply bg-slate-700;
-}
-
-.ant-slider .ant-slider-step {
-  @apply bg-slate-600;
-}
-
-.ant-transfer .ant-transfer-list-content-item-checked {
-  @apply dark:bg-slate-900;
-}
-
 .ant-segmented .ant-segmented-item:hover:not(.ant-segmented-item-selected):not(.ant-segmented-item-disabled)::after {
   @apply dark:bg-slate-700/70;
 }
 
-.ant-table-wrapper .ant-table-thead th.ant-table-column-sort {
-  @apply bg-slate-400;
-}
+.ant-modal {
+  [class*='ant-modal-content'] {
+    @apply bg-component w-full dark:bg-[#27272a];
+  }
 
-.ant-modal [class*='ant-modal-content'] {
-  @apply bg-component w-full dark:bg-[#27272a];
-}
+  .ant-modal-confirm-content {
+    @apply w-full;
+  }
 
-.ant-modal .ant-modal-confirm-content {
-  @apply w-full;
-}
-
-.ant-modal .ant-modal-header {
-  @apply dark:bg-transparent;
+  .ant-modal-header {
+    @apply dark:bg-transparent;
+  }
 }
 
 .ant-progress .ant-progress-bg {
@@ -57,9 +42,4 @@ button.ant-switch {
 
 .ant-typography .ant-typography-copy {
   @apply text-primary-500;
-}
-
-.ant-cascader-dropdown .ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled),
-.ant-cascader-dropdown .ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled):hover {
-  @apply dark:text-slate-600;
 }

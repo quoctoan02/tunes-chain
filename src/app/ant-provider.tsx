@@ -1,7 +1,7 @@
 import dynamicColors from '.tailwind/colors'
 import tailwindConfig from '.tailwind/tailwind.config.js'
 import { useTheme } from '@hooks/stores/useTheme'
-import { ConfigProvider } from 'antd'
+import { ConfigProvider, theme as antTheme } from 'antd'
 import { AliasToken } from 'antd/es/theme/internal'
 import { FC, ReactNode } from 'react'
 import defaultTailwindColors from 'tailwindcss/colors'
@@ -50,7 +50,7 @@ const AntProvider: FC<AntProviderProps> = ({ children }) => {
     <ConfigProvider
       theme={{
         token: tokenTheme[theme],
-        // algorithm: theme === 'dark' ? antTheme.darkAlgorithm : antTheme.defaultAlgorithm,
+        algorithm: theme === 'dark' ? antTheme.darkAlgorithm : antTheme.defaultAlgorithm,
         components: {
           Input: {
             colorBgContainer: 'transparent',
@@ -77,12 +77,13 @@ const defaultTheme = (theme: ThemeName): Partial<AliasToken> => {
     // colorBgSpotlight: tailwindColors[theme]. ,
 
     // Config colors
-    colorTextBase: tailwindColors[theme].textContent,
+    colorTextBase: tailwindColors[theme].content,
     colorPrimaryText: tailwindColors[theme].primary[500],
+    colorPrimaryHover: tailwindColors[theme].primary[600],
     colorPrimaryBorder: tailwindColors[theme].primary[500],
     colorPrimary: tailwindColors[theme].primary[500],
 
-    colorText: tailwindColors[theme].textContent,
+    colorText: tailwindColors[theme].content,
     colorBgElevated: tailwindColors[theme].component,
 
     colorInfo: tailwindColors[theme].sky[500],
@@ -90,8 +91,8 @@ const defaultTheme = (theme: ThemeName): Partial<AliasToken> => {
     colorError: tailwindColors[theme].error[500],
     colorWarning: tailwindColors[theme].warning[500],
 
-    colorIcon: tailwindColors[theme].textContent,
-    colorTextLabel: tailwindColors[theme].textContent,
+    colorIcon: tailwindColors[theme].content,
+    colorTextLabel: tailwindColors[theme].content,
     colorWhite: tailwindColors[theme].white,
 
     // Override tailwind colors instead of antd colors
@@ -115,7 +116,7 @@ const tokenTheme: AntTokenTheme = {
   dark: {
     ...defaultTheme('dark'),
     colorBgElevated: tailwindColors.dark.component,
-    colorFillSecondary: tailwindColors.dark.slate[300],
+    colorFillSecondary: tailwindColors.dark.slate[800],
     colorTextSecondary: tailwindColors.dark.slate[500],
     colorSplit: tailwindColors.dark.slate[500],
     colorTextDescription: tailwindColors.dark.slate[400],
@@ -124,7 +125,7 @@ const tokenTheme: AntTokenTheme = {
     controlOutline: tailwindColors.dark.slate[500],
     controlItemBgActiveDisabled: tailwindColors.dark.slate[700],
     colorTextDisabled: tailwindColors.dark.slate[600],
-    colorBorder: tailwindColors.dark.slate[700],
+    colorBorder: tailwindColors.dark.slate[400],
     colorTextPlaceholder: tailwindColors.dark.slate[700],
     colorBgLayout: tailwindColors.dark.slate[800],
 
