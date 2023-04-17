@@ -70,6 +70,7 @@ const defaultTheme = (theme: ThemeName): Partial<AliasToken> => {
   return {
     // Config font family
     fontFamily,
+
     // Config background colors
     colorBgBase: tailwindColors[theme].body,
     // colorBgMask: tailwindColors[theme].,
@@ -114,7 +115,7 @@ const tokenTheme: AntTokenTheme = {
   dark: {
     ...defaultTheme('dark'),
     colorBgElevated: tailwindColors.dark.component,
-    colorFillSecondary: tailwindColors.dark.slate[400],
+    colorFillSecondary: tailwindColors.dark.slate[300],
     colorTextSecondary: tailwindColors.dark.slate[500],
     colorSplit: tailwindColors.dark.slate[500],
     colorTextDescription: tailwindColors.dark.slate[400],

@@ -66,7 +66,7 @@ button.ant-switch {
 
 input.ant-input {
   padding: 4px 11px;
-  font-size: 14px;
+  font-size: inherit;
   line-height: 1.5714285714285714;
   list-style: none;
   position: relative;
@@ -77,7 +77,7 @@ input.ant-input {
   border-width: 1px;
   border-style: solid;
   border-radius: 6px;
-  border-color: #d9d9d9;
+  border-color: inherit;
 }
 
 input.ant-input.ant-input-lg {
