@@ -1,9 +1,11 @@
 import { Container } from '@components/Layout'
 import { routePath } from '@config/routes.config'
+import { Button, Result } from 'antd'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { ReactElement, useEffect, useState } from 'react'
+import { AiFillHome } from 'react-icons/ai'
 import { NextPageWithLayout } from 'src/types'
 
 const TIMING_COUNTDOWN_TO_HOMEPAGE = 20
@@ -35,14 +37,20 @@ const NotFoundPage: NextPageWithLayout = () => {
 
       <Container>
         <div className="flex min-h-screen flex-col items-center justify-center py-20 pt-5">
-          <h1 className="text-5xl font-bold uppercase tracking-wider ">404</h1>
-          <p className="text-primary-500 text-4xl font-semibold uppercase">Page not found</p>
-          <p className="mt-3 text-center text-lg">
-            Automatically return to the homepage later {time} seconds or{' '}
-            <Link className="text-primary-400 hover:text-primary-500 underline" href={routePath.home}>
-              click here
-            </Link>
-          </p>
+          <Result
+            status="404"
+            title={<h1 className="text-6xl font-bold uppercase tracking-wider ">404</h1>}
+            subTitle={
+              <p className="mt-3 text-center text-lg">Automatically return to the homepage later {time} seconds </p>
+            }
+            extra={
+              <Link className="flex items-center justify-center" href={routePath.home}>
+                <Button type="primary" icon={<AiFillHome />}>
+                  Back Home
+                </Button>
+              </Link>
+            }
+          />
         </div>
       </Container>
     </>

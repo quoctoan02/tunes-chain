@@ -1,5 +1,5 @@
 button.ant-btn {
-  @apply disabled:text-content flex items-center justify-center  hover:enabled:opacity-80 disabled:flex disabled:cursor-not-allowed disabled:items-center disabled:justify-center disabled:opacity-40;
+  @apply disabled:text-content flex items-center justify-center gap-2 hover:enabled:opacity-80 disabled:flex disabled:cursor-not-allowed disabled:items-center disabled:justify-center disabled:opacity-40;
 }
 
 .ant-btn-dashed {

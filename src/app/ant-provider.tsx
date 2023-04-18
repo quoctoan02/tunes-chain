@@ -111,7 +111,7 @@ const defaultTheme = (theme: ThemeName): Partial<AliasToken> => {
 const tokenTheme: AntTokenTheme = {
   light: {
     ...defaultTheme('light'),
-    colorTextDescription: tailwindColors.light.slate[300],
+    colorTextDescription: tailwindColors.light.slate[700],
   },
   dark: {
     ...defaultTheme('dark'),

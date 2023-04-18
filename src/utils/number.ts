@@ -5,16 +5,16 @@ export const formatNumber = (value: number, maximumFractionDigits: number = 6, c
   if (typeof value !== 'number' || isNaN(value)) return value
   return new Intl.NumberFormat('en', {
     minimumFractionDigits: 0,
-    maximumFractionDigits: 6,
+    maximumFractionDigits,
     compactDisplay: 'short',
     notation: compact ? 'compact' : 'standard',
   }).format(value)
 }
 
-export const formatWei = (wei: BigNumberish, decimals: BigNumberish = 18): string => {
+export const formatWei = (wei: BigNumberish, maximumFractionDigits = 6, decimals: BigNumberish = 18): string => {
   try {
     return new Intl.NumberFormat('en', {
-      maximumFractionDigits: 6,
+      maximumFractionDigits,
     }).format(+formatUnits(wei, decimals))
   } catch (err) {
     return '_'
