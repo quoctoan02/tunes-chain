@@ -22,7 +22,6 @@ const Header: FC<HeaderProps> = (props) => {
     setIsOpenDrawer(false)
   }
 
-
   return (
     <>
       <header className="bg-component fixed left-0 right-0 top-0 z-50 h-16 shadow">
