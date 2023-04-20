@@ -6,6 +6,8 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
+    "mac-testnet": "APP_ENV=testnet next dev -p 4000",
+    "mac-mainnet": "APP_ENV=mainnet next dev -p 4000",
     "format": "prettier --write .",
     "generate": "next build && next export -o html",
     "postinstall": "husky install",
@@ -45,12 +47,14 @@
   },
   "devDependencies": {
     "@bonehub/tailwind-dynamic-colors": "^0.0.3",
+    "@svgr/webpack": "^7.0.0",
     "@typechain/ethers-v5": "^10.2.0",
     "@types/node": "18.15.11",
     "@types/react": "18.0.33",
     "@types/react-dom": "18.0.11",
     "autoprefixer": "^10.4.14",
     "class-variance-authority": "^0.5.1",
+    "dotenv-flow": "^3.2.0",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
     "husky": "^8.0.3",
