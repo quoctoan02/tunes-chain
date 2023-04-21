@@ -1,10 +1,10 @@
-require("dotenv-flow").config({
-  node_env: process.env.APP_ENV || process.env.NODE_ENV || "development",
+require('dotenv-flow').config({
+  node_env: process.env.APP_ENV || process.env.NODE_ENV || 'development',
 })
 
 const env = {}
 Object.keys(process.env).forEach((key) => {
-  if (key.startsWith("NEXT_PUBLIC_")) {
+  if (key.startsWith('NEXT_PUBLIC_')) {
     env[key] = process.env[key]
   }
 })
@@ -12,7 +12,7 @@ Object.keys(process.env).forEach((key) => {
 const webpack = (config) => {
   config.module.rules.push({
     test: /\.svg$/,
-    use: ["@svgr/webpack"],
+    use: ['@svgr/webpack'],
   })
   return config
 }

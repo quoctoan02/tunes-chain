@@ -35,7 +35,7 @@ const Header: FC<HeaderProps> = (props) => {
                 const absolutePath = route.href.split('/')[1] || ''
 
                 const active = router.pathname.includes(`/${absolutePath}`)
-                if (route.isHideLabel) return
+                if (!route.href) return
 
                 return (
                   <Link
@@ -68,7 +68,7 @@ const Header: FC<HeaderProps> = (props) => {
             const absolutePath = route.href.split('/')[1] || ''
 
             const active = router.pathname.includes(`/${absolutePath}`)
-            if (route.isHideLabel) return
+            if (!route.href) return
 
             return (
               <Link
