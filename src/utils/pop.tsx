@@ -35,7 +35,7 @@ export const popPending = (msg: string, hash?: string) =>
         <p className="text-center text-sm font-semibold">{msg}</p>
         {hash && (
           <a
-            href={useWeb3.getState().chain.blockExplorers.default.url + 'tx/' + hash}
+            href={useWeb3.getState().chain.blockExplorers.default.url + '/tx/' + hash}
             target="_blank"
             rel="noopener noreferrer"
             className="text-info flex items-center gap-2 text-center text-sm font-semibold"
@@ -61,7 +61,7 @@ export const popSuccess = (msg: string, hash?: string) =>
         <p className="text-center text-sm font-semibold">{msg}</p>
         {hash && (
           <a
-            href={useWeb3.getState().chain.blockExplorers.default.url + 'tx/' + hash}
+            href={useWeb3.getState().chain.blockExplorers.default.url + '/tx/' + hash}
             target="_blank"
             rel="noopener noreferrer"
             className="text-info flex items-center gap-2 text-center text-xs font-medium"
@@ -85,7 +85,7 @@ export const popError = (msg: string, hash?: string) =>
         <p className="text-center text-sm font-semibold">{msg}</p>
         {hash ? (
           <a
-            href={useWeb3.getState().chain.blockExplorers.default.url + 'tx/' + hash}
+            href={useWeb3.getState().chain.blockExplorers.default.url + '/tx/' + hash}
             target="_blank"
             rel="noopener noreferrer"
             className="text-error flex items-center gap-2 text-center text-xs font-medium"
