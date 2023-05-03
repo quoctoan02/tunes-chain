@@ -39,6 +39,7 @@ module.exports = {
     require('./base'),
     require('./legacy'),
     require('@bonehub/tailwind-dynamic-colors')(dynamicColors),
+    require('./antd'),
     require('tailwindcss-animate'),
     require('tailwind-scrollbar')({ nocompatible: true }),
   ],

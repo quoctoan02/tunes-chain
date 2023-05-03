@@ -1,5 +1,6 @@
 import { Provider } from '@app/provider'
 import { Loader } from '@components/ui'
+import { generateTailwindClasses } from '@config/generate-tailwind-classes'
 import DefaultLayout from '@layouts/DefaultLayout'
 import { AppPropsWithLayout } from '@types'
 import Head from 'next/head'
@@ -36,6 +37,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       {getLayout(<Component {...pageProps} />)}
+      {generateTailwindClasses()}
     </>
   )
 
