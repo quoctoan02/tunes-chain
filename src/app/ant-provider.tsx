@@ -23,7 +23,7 @@ export const tailwindColors = {
   dark: { ...defaultTailwindColors, ...tailwindTheme.colors, ...dynamicColors.dark },
 }
 
-console.log({ tailwindTheme, tailwindColors })
+// console.log({ tailwindTheme, tailwindColors })
 
 const mapTailwindColorsToAntColors = (colorName: string, color: any) => {
   const colors = Object.keys(color)
@@ -60,6 +60,7 @@ const AntProvider: FC<AntProviderProps> = ({ children }) => {
           },
         },
       }}
+      dropdownMatchSelectWidth
     >
       {children}
     </ConfigProvider>
@@ -70,7 +71,6 @@ const defaultTheme = (theme: ThemeName): Partial<AliasToken> => {
   return {
     // Config font family
     fontFamily,
-
     // Config background colors
     colorBgBase: tailwindColors[theme].body,
     // colorBgMask: tailwindColors[theme].,
@@ -128,7 +128,6 @@ const tokenTheme: AntTokenTheme = {
     colorBorder: tailwindColors.dark.slate[400],
     colorTextPlaceholder: tailwindColors.dark.slate[700],
     colorBgLayout: tailwindColors.dark.slate[800],
-
     // colorLinkHover: tailwindColors.dark.slate[700],
   },
 }

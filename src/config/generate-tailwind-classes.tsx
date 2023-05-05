@@ -11,5 +11,5 @@ const classes = [
 ]
 
 export const generateTailwindClasses = () => {
-  return <div className={cn(classes)}></div>
+  return <div className={cn(classes, 'hidden')}></div>
 }

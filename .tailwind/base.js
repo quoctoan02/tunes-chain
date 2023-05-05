@@ -38,5 +38,13 @@ module.exports = plugin(({ addBase, theme }) => {
       display: 'block',
       verticalAlign: 'middle',
     },
+    '*,::before,::after': {
+      'border-width': 0,
+      'border-style': 'solid',
+      'border-color': theme('borderColor.DEFAULT', 'currentColor'),
+    },
+    '.google-map *': {
+      'border-style': 'none',
+    },
   })
 })
