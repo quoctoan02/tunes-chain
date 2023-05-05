@@ -27,11 +27,7 @@ module.exports = {
       borderRadius: {
         DEFAULT: '0.5rem',
       },
-      colors: {
-        warm: {
-          600: '#4B5563',
-        },
-      },
+      colors: {},
     },
   },
   plugins: [

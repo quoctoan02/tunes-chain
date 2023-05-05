@@ -21,13 +21,25 @@ module.exports = {
       ...colors.green,
       DEFAULT: colors.green[500],
     },
+    info: {
+      ...colors.blue,
+      DEFAULT: colors.blue[500],
+    },
     warning: {
-      ...colors.yellow,
-      DEFAULT: colors.yellow[500],
+      ...colors.amber,
+      DEFAULT: colors.amber[500],
     },
     error: {
       ...colors.red,
       DEFAULT: colors.red[500],
+    },
+    warm: {
+      ...colors.neutral,
+      DEFAULT: colors.neutral,
+    },
+    cool: {
+      ...colors.gray,
+      DEFAULT: colors.gray,
     },
   },
   dark: {
@@ -50,6 +62,10 @@ module.exports = {
       ...colors.green,
       DEFAULT: colors.green[500],
     },
+    info: {
+      ...colors.blue,
+      DEFAULT: colors.blue[500],
+    },
     warning: {
       ...colors.yellow,
       DEFAULT: colors.yellow[500],
@@ -57,6 +73,14 @@ module.exports = {
     error: {
       ...colors.red,
       DEFAULT: colors.red[500],
+    },
+    warm: {
+      ...colors.neutral,
+      DEFAULT: colors.neutral,
+    },
+    cool: {
+      ...colors.gray,
+      DEFAULT: colors.gray,
     },
   },
 }
