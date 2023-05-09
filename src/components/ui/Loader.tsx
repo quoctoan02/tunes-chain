@@ -12,6 +12,4 @@ const Loader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElem
   }
 )
 
-Loader.displayName = 'Loader'
-
 export default Loader
