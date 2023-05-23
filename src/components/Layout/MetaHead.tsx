@@ -9,7 +9,7 @@ interface MetaHeadProps {
 }
 
 const MetaHead: FC<MetaHeadProps> = (props) => {
-  const { title = 'Template NextJs', thumbnail = '/thumbnail.png', description = 'Template NextJs', url = '' } = props
+  const { title = 'Template Dapp NextJs', thumbnail = '/thumbnail.png', description = '', url = '' } = props
 
   return (
     <Head>
