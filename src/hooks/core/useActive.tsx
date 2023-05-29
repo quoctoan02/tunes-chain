@@ -75,6 +75,7 @@ export const useActive = () => {
                 <img
                   key={wallet.name}
                   src={wallet.iconURI}
+                  alt=""
                   role="button"
                   className="w-full rounded-2xl object-cover transition-all hover:scale-110"
                   onClick={() => handleSelectWallet(wallet)}

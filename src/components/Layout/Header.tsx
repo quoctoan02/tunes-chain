@@ -27,7 +27,7 @@ const Header: FC<HeaderProps> = (props) => {
       <header className="bg-component fixed left-0 right-0 top-0 z-50 h-16 shadow">
         <Container className="flex h-full items-center justify-between">
           <Link href={routePath.home} className="h-8">
-            <img src="/logo/logo.svg" className="h-full" />
+            <img src="/logo/logo.svg" alt="" className="h-full" />
           </Link>
           <div className="flex items-center gap-6">
             <nav className="flex items-center gap-6">
