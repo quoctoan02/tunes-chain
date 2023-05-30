@@ -46,5 +46,8 @@ module.exports = plugin(({ addBase, theme }) => {
     '.google-map *': {
       'border-style': 'none',
     },
+    button: {
+      '@apply cursor-pointer bg-transparent': {},
+    },
   })
 })
