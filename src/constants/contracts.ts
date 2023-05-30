@@ -1,9 +1,6 @@
 import { ChainIds } from '@config/chains.config'
-import { Address } from 'wagmi'
 
-export type ContractName = '0' | 'MULTICALL'
-
-export const CONTRACTS: Record<ContractName, Record<ChainIds, Address>> = {
+export const CONTRACTS = {
   0: {
     [ChainIds.TESTNET]: '0x0000000000000000000000000000000000000000',
     [ChainIds.MAINNET]: '0x0000000000000000000000000000000000000000',
