@@ -5,12 +5,14 @@ export const routePath = {
   link1: '/link-1',
   link2: '/link-2',
   link3: '/link-3',
+  link4: '#link-4',
 } as const
 
 interface BaseRoute {
   label: ReactNode
   href: string
   isComingSoon?: boolean
+  blank?: boolean
 }
 
 export const routes: BaseRoute[] = [
@@ -27,10 +29,14 @@ export const routes: BaseRoute[] = [
   {
     label: 'Link 2',
     href: routePath.link2,
-    isComingSoon: true,
+    blank: true,
   },
   {
     label: 'Link 3',
     href: routePath.link3,
+  },
+  {
+    label: 'Link 4',
+    href: routePath.link4,
   },
 ]

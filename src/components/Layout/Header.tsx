@@ -41,6 +41,7 @@ const Header: FC<HeaderProps> = (props) => {
                     comingSoon={route?.isComingSoon}
                     key={`${route.href}-${index}`}
                     href={route.href}
+                    blank={route?.blank}
                     className={cn('hover:text-primary-500', active && 'active')}
                   >
                     {route.label}
@@ -73,6 +74,7 @@ const Header: FC<HeaderProps> = (props) => {
                 comingSoon={route?.isComingSoon}
                 key={`${route.href}-${index}-drawer`}
                 href={route.href}
+                blank={route?.blank}
                 className={cn('hover:text-primary-500', active && 'active')}
                 onClick={handleCloseDrawer}
               >

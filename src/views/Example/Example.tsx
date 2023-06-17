@@ -1,7 +1,7 @@
 import { UserOutlined } from '@ant-design/icons'
 import { tailwindColors } from '@app/ant-provider'
 import { Container } from '@components/Layout'
-import { Button } from '@components/ui'
+import { Button, CustomLink } from '@components/ui'
 import { toastContent } from '@helpers/toastContent'
 import {
   Avatar,
@@ -79,6 +79,9 @@ const Example: FC<ExampleProps> = (props) => {
   return (
     <Container size="md" className="flex flex-col gap-4 py-20">
       <ButtonExample />
+      <CustomLink href="#hello" blank>
+        Demo Custom Link
+      </CustomLink>
       <Typography.Paragraph
         copyable={{
           text: 'Text was copied',
