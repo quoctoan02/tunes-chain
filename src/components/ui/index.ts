@@ -1,4 +1,4 @@
-export { default as Button } from './Button'
+export * from './Button'
 export { default as Empty } from './Empty'
 export { default as ExternalLink } from './ExternalLink'
 export { default as Loader } from './Loader'
