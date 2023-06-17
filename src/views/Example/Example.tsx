@@ -93,6 +93,11 @@ const Example: FC<ExampleProps> = (props) => {
 
       <ModalExample />
 
+      <div className="text-overflow-2 w-96">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum unde culpa iste quo? Eum nemo, repellat esse
+        exercitationem quisquam labore. Ut ullam amet pariatur neque odio corrupti mollitia quod aliquam.
+      </div>
+
       <div className="flex items-center gap-4">
         <Button
           className="bg-success-500"
