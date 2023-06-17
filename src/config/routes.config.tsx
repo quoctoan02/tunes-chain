@@ -17,6 +17,7 @@ export const routes: BaseRoute[] = [
   {
     label: '',
     href: routePath.home,
+    isComingSoon: true,
   },
   {
     label: 'Link 1',
@@ -26,6 +27,7 @@ export const routes: BaseRoute[] = [
   {
     label: 'Link 2',
     href: routePath.link2,
+    isComingSoon: true,
   },
   {
     label: 'Link 3',

@@ -74,6 +74,7 @@ const Header: FC<HeaderProps> = (props) => {
                 key={`${route.href}-${index}-drawer`}
                 href={route.href}
                 className={cn('hover:text-primary-500', active && 'active')}
+                onClick={handleCloseDrawer}
               >
                 {route.label}
               </CustomLink>
