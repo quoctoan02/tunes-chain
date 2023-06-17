@@ -40,7 +40,7 @@ http.interceptors.response.use(
     return Promise.resolve(response)
   },
   (error: AxiosError) => {
-    error.response.statusText = error.response.data['error_code'] || 'Connection lost'
+    error.response.statusText = error.response?.data?.['error_code'] || 'Connection lost'
     error.response.data = null
     return Promise.resolve(error.response)
   }

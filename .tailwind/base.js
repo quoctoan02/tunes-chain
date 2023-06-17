@@ -49,5 +49,15 @@ module.exports = plugin(({ addBase, theme }) => {
     button: {
       '@apply cursor-pointer bg-transparent': {},
     },
+
+    '*::-webkit-scrollbar': {
+      '@apply w-2': {},
+    },
+    '*::-webkit-scrollbar-track': {
+      '@apply bg-gray-200': {},
+    },
+    '*::webkit-scrollbar-thumb': {
+      '@apply bg-primary-300 hover:bg-primary-400': {},
+    },
   })
 })
