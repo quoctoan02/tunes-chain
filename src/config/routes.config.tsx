@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 export const routePath = {
   home: '/',
   link1: '/link-1',
@@ -5,7 +7,13 @@ export const routePath = {
   link3: '/link-3',
 } as const
 
-export const routes = [
+interface BaseRoute {
+  label: ReactNode
+  href: string
+  isComingSoon?: boolean
+}
+
+export const routes: BaseRoute[] = [
   {
     label: '',
     href: routePath.home,
@@ -13,6 +21,7 @@ export const routes = [
   {
     label: 'Link 1',
     href: routePath.link1,
+    isComingSoon: true,
   },
   {
     label: 'Link 2',

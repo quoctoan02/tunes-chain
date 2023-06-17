@@ -1,4 +1,5 @@
 export * from './Button'
+export { default as CustomLink } from './CustomLink'
 export { default as Empty } from './Empty'
 export { default as ExternalLink } from './ExternalLink'
 export { default as Loader } from './Loader'

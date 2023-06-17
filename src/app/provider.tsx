@@ -12,7 +12,15 @@ export const Provider = ({ children }) => {
     <SWRConfig value={config}>
       <WagmiConfig client={client}>
         <GlobalHooks />
-        <ToastContainer closeButton draggable position="top-right" theme="colored" pauseOnHover autoClose={3500} />
+        <ToastContainer
+          closeButton
+          draggable
+          position="top-right"
+          theme="colored"
+          hideProgressBar
+          pauseOnHover
+          autoClose={3500}
+        />
         <AntProvider>{children}</AntProvider>
       </WagmiConfig>
     </SWRConfig>
