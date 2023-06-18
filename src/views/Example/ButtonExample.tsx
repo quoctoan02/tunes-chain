@@ -1,7 +1,7 @@
 import { SearchOutlined } from '@ant-design/icons'
 import { Button } from '@components/ui'
 import { Tooltip } from 'antd'
-import type { FC } from 'react'
+import { FC } from 'react'
 
 interface ButtonExampleProps {}
 
@@ -16,6 +16,7 @@ const ButtonExample: FC<ButtonExampleProps> = (props) => {
           Default Button
         </Button>
         <Button type="dashed">Dashed Button</Button>
+        <Button type="ghost">Ghost Button</Button>
         <Button className="" type="primary" disabled>
           Disabled Button
         </Button>
