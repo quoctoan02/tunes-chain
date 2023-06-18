@@ -1,4 +1,4 @@
-import { Spinner } from '@components/ui'
+import { ExternalLink, Spinner } from '@components/ui'
 import { web3ErrorMsg } from '@constants/web3ErrorMsg'
 import { Popper } from '@helpers/Popper'
 import { useWeb3 } from '@hooks/stores/useWeb3'
@@ -54,21 +54,19 @@ export const popPending = (msg: string, hash?: string) =>
 export const popSuccess = (msg: string, hash?: string) =>
   Popper.fire({
     icon: 'success',
-    title: 'Success',
+    title: hash ? 'Transaction submitted' : 'Success',
     html: (
       <div className="flex flex-col items-center gap-2">
-        {hash && <p className="text-center text-xl font-bold">Transaction Submitted</p>}
-        <p className="text-center text-sm font-semibold">{msg}</p>
+        {/* {hash && <p className="text-center text-xl font-bold">Transaction Submitted</p>} */}
+        <p className="text-center text-lg font-semibold">{msg}</p>
         {hash && (
-          <a
+          <ExternalLink
             href={useWeb3.getState().chain.blockExplorers.default.url + '/tx/' + hash}
-            target="_blank"
-            rel="noopener noreferrer"
             className="text-info flex items-center gap-2 text-center text-xs font-medium"
           >
             <p>View transaction</p>
             <HiExternalLink />
-          </a>
+          </ExternalLink>
         )}
       </div>
     ),
@@ -78,29 +76,26 @@ export const popSuccess = (msg: string, hash?: string) =>
 export const popError = (msg: string, hash?: string) =>
   Popper.fire({
     icon: 'error',
-    title: 'Error',
+    title: hash ? 'Transaction failed' : 'Error',
     html: (
       <div className="flex flex-col items-center gap-2">
-        {hash && <p className="text-center text-xl font-bold">Transaction Failed</p>}
-        <p className="text-center text-sm font-semibold">{msg}</p>
+        <p className="text-center text-lg font-semibold">{msg}</p>
         {hash ? (
-          <a
+          <ExternalLink
             href={useWeb3.getState().chain.blockExplorers.default.url + '/tx/' + hash}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-error flex items-center gap-2 text-center text-xs font-medium"
+            className="text-error flex items-center gap-2 text-center text-sm font-medium"
           >
             <p>View transaction</p>
             <HiExternalLink />
-          </a>
+          </ExternalLink>
         ) : null}
-        <p className="text-center text-xs font-medium">Please try again</p>
+        {/* <p className="text-center text-xs font-medium">Please try again</p> */}
       </div>
     ),
     showCloseButton: false,
     showConfirmButton: false,
     showDenyButton: true,
-    denyButtonText: 'OK',
+    denyButtonText: 'TRY AGAIN',
   })
 
 export const popWeb3Errors = (err: any, defaultMsg: string) => {

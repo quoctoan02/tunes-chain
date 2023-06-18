@@ -19,18 +19,18 @@
       @apply text-content order-3 p-6 text-left text-base;
     }
     .swal2-actions {
-      @apply order-4 m-0 flex-row-reverse gap-2 py-6;
+      @apply order-4 m-0 flex-row-reverse gap-2 px-4 pb-6;
       button {
         @apply tw-btn tw-btn-normal tw-btn-md m-0 focus:shadow-none focus:outline-none;
       }
       .swal2-confirm {
-        @apply tw-btn-primary;
+        @apply tw-btn-primary w-full;
       }
       .swal2-cancel {
         @apply tw-btn-outlined border border-solid bg-transparent;
       }
       .swal2-deny {
-        @apply tw-btn-primary-outlined border border-solid bg-transparent;
+        @apply tw-btn-primary-outlined w-full border border-solid bg-transparent;
       }
     }
   }

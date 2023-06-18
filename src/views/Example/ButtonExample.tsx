@@ -1,7 +1,7 @@
 import { SearchOutlined } from '@ant-design/icons'
 import { Button } from '@components/ui'
 import { Tooltip } from 'antd'
-import type { FC } from 'react'
+import { FC } from 'react'
 
 interface ButtonExampleProps {}
 

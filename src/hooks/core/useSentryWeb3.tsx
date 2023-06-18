@@ -1,8 +1,9 @@
-import { Button, Empty } from '@components/ui'
+import { Button } from '@components/ui'
 import { Popper } from '@helpers/Popper'
 import { useWeb3 } from '@hooks/stores/useWeb3'
 import { popWeb3Errors } from '@utils/pop'
 import { useCallback, useState } from 'react'
+import { TiInfoOutline } from 'react-icons/ti'
 import { toast } from 'react-toastify'
 import useSWR from 'swr'
 import { useAccount, useNetwork, useProvider, useSigner, useSwitchNetwork } from 'wagmi'
@@ -38,11 +39,14 @@ export const useSentryWeb3 = () => {
         title: 'Check your network',
         html: (
           <div className="flex flex-col items-center gap-2">
-            <Empty>Please switch your network to continue.</Empty>
-            <Button async className="w-full" type="primary" onClick={setupChain}>
+            <div className="mb-6 flex flex-col items-center gap-4">
+              <TiInfoOutline className="text-8xl" />
+              <p className="">Please switch your network to continue.</p>
+            </div>
+            <Button async className="w-full dark:text-white" size="small" type="primary" onClick={setupChain}>
               Switch network
             </Button>
-            <Button className="w-full" type="default" onClick={disconnect}>
+            <Button className="w-full dark:text-white" size="small" type="default" onClick={disconnect}>
               Disconnect
             </Button>
           </div>

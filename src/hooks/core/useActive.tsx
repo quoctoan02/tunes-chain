@@ -2,6 +2,7 @@ import { Button } from '@components/ui'
 import { DEFAULT_CHAIN_ID } from '@config/chains.config'
 import { ConnectorIds, connectorInstances } from '@config/wagmi.config'
 import { wallets } from '@config/wallets.config'
+import { Popper } from '@helpers/Popper'
 import { useUser } from '@hooks/stores/useUser'
 import { Modal } from 'antd'
 import { useCallback } from 'react'
@@ -105,18 +106,20 @@ export const useActive = () => {
           </div>
           <div className="mt-6 flex items-center justify-center gap-5">
             <Button
-              className="hover:text-primary-500 hover:border-primary-500 w-full"
+              className="hover:text-primary-500 hover:border-primary-500 w-full dark:text-white"
               type="default"
               onClick={() => Modal.destroyAll()}
             >
               Cancel
             </Button>
             <Button
-              className="bg-primary-500 hover:bg-primary-600 w-full"
+              className=" w-full dark:text-white"
+              type="primary"
               onClick={() => {
                 disconnectAsync()
                 logout()
                 Modal.destroyAll()
+                Popper.close()
               }}
             >
               OK
@@ -131,6 +134,7 @@ export const useActive = () => {
       width: 315,
       maskClosable: true,
       closeIcon: <AiOutlineClose className="!text-content text-xl" />,
+      zIndex: 2000,
     })
 
     // const { isConfirmed } = await Popper.fire({
