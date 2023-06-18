@@ -1,10 +1,10 @@
 import { ToggleTheme } from '@app/toggle-theme'
+import { CustomLink } from '@components/ui'
 import { routePath, routes } from '@config/routes.config'
 import { useActive } from '@hooks/core/useActive'
 import { truncateAddress } from '@utils/string'
 import { cn } from '@utils/style'
 import { Button, Drawer } from 'antd'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FC, useState } from 'react'
 import { AiOutlineBars } from 'react-icons/ai'
@@ -26,26 +26,26 @@ const Header: FC<HeaderProps> = (props) => {
     <>
       <header className="bg-component fixed left-0 right-0 top-0 z-50 h-16 shadow">
         <Container className="flex h-full items-center justify-between">
-          <Link href={routePath.home} className="h-8">
+          <CustomLink href={routePath.home} className="h-8">
             <img src="/logo/logo.svg" alt="" className="h-full" />
-          </Link>
+          </CustomLink>
           <div className="flex items-center gap-6">
             <nav className="flex items-center gap-6">
-              {routes.map((route) => {
+              {routes.map((route, index) => {
                 const absolutePath = route.href.split('/')[1] || ''
-
-                const active = router.pathname.includes(`/${absolutePath}`)
-                if (!route.href) return
+                const active = router.pathname.startsWith(`/${absolutePath}`)
 
                 return (
-                  <Link
-                    className={cn('hover:text-primary-500', active && 'active')}
+                  <CustomLink
+                    disabled={route?.isComingSoon}
+                    comingSoon={route?.isComingSoon}
+                    key={`${route.href}-${index}`}
                     href={route.href}
-                    key={route.label + 'mobile'}
-                    onClick={() => handleCloseDrawer()}
+                    blank={route?.blank}
+                    className={cn('hover:text-primary-500', active && 'active')}
                   >
                     {route.label}
-                  </Link>
+                  </CustomLink>
                 )
               })}
             </nav>
@@ -63,22 +63,23 @@ const Header: FC<HeaderProps> = (props) => {
         </Container>
       </header>
       <Drawer open={isOpenDrawer} onClose={handleCloseDrawer}>
-        <nav className="flex flex-col gap-10">
-          {routes.map((route) => {
+        <nav className="flex flex-col items-start gap-10">
+          {routes.map((route, index) => {
             const absolutePath = route.href.split('/')[1] || ''
-
-            const active = router.pathname.includes(`/${absolutePath}`)
-            if (!route.href) return
+            const active = router.pathname.startsWith(`/${absolutePath}`)
 
             return (
-              <Link
-                className={cn('hover:text-primary-500', active && 'active')}
+              <CustomLink
+                disabled={route?.isComingSoon}
+                comingSoon={route?.isComingSoon}
+                key={`${route.href}-${index}-drawer`}
                 href={route.href}
-                key={route.label + 'mobile'}
-                onClick={() => handleCloseDrawer()}
+                blank={route?.blank}
+                className={cn('hover:text-primary-500', active && 'active')}
+                onClick={handleCloseDrawer}
               >
                 {route.label}
-              </Link>
+              </CustomLink>
             )
           })}
         </nav>

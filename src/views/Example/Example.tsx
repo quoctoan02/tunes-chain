@@ -1,7 +1,7 @@
 import { UserOutlined } from '@ant-design/icons'
 import { tailwindColors } from '@app/ant-provider'
 import { Container } from '@components/Layout'
-import { Button } from '@components/ui'
+import { Button, CustomLink, Input } from '@components/ui'
 import { toastContent } from '@helpers/toastContent'
 import {
   Avatar,
@@ -13,7 +13,6 @@ import {
   Divider,
   Dropdown,
   Form,
-  Input,
   InputNumber,
   MenuProps,
   Pagination,
@@ -79,6 +78,9 @@ const Example: FC<ExampleProps> = (props) => {
   return (
     <Container size="md" className="flex flex-col gap-4 py-20">
       <ButtonExample />
+      <CustomLink href="#hello" blank>
+        Demo Custom Link
+      </CustomLink>
       <Typography.Paragraph
         copyable={{
           text: 'Text was copied',
@@ -89,6 +91,11 @@ const Example: FC<ExampleProps> = (props) => {
       </Typography.Paragraph>
 
       <ModalExample />
+
+      <div className="text-overflow-2 w-96">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum unde culpa iste quo? Eum nemo, repellat esse
+        exercitationem quisquam labore. Ut ullam amet pariatur neque odio corrupti mollitia quod aliquam.
+      </div>
 
       <div className="flex items-center gap-4">
         <Button
@@ -210,6 +217,10 @@ const Example: FC<ExampleProps> = (props) => {
           </Form.Item>
           <Form.Item label="Number" name="number" rules={[{ required: true, message: 'Please input your number!' }]}>
             <InputNumber min={1} max={10} defaultValue={3} />
+          </Form.Item>
+
+          <Form.Item>
+            <Input.Search addonBefore="Hello" size="large" />
           </Form.Item>
 
           <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>

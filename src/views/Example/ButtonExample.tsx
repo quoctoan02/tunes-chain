@@ -9,10 +9,10 @@ const ButtonExample: FC<ButtonExampleProps> = (props) => {
   return (
     <div className="">
       <div className="flex flex-wrap items-center gap-4">
-        <Button className="" type="primary">
+        <Button className="" type="primary" size="large">
           Primary Button
         </Button>
-        <Button className="" type="default">
+        <Button className="" type="default" size="middle">
           Default Button
         </Button>
         <Button type="dashed">Dashed Button</Button>

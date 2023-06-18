@@ -8,6 +8,10 @@ const classes = [
   'ant-popconfirm-buttons',
   'ant-modal-confirm-btns',
   'ant-typography',
+  'ant-input-wrapper',
+  // 'text-overflow-1',
+  // 'text-overflow-2',
+  // 'text-overflow-3',
 ]
 
 export const generateTailwindClasses = () => {

@@ -2,6 +2,7 @@ import { Provider } from '@app/provider'
 import { MetaHead } from '@components/Layout'
 import { Loader } from '@components/ui'
 import { generateTailwindClasses } from '@config/generate-tailwind-classes'
+import ComingSoonPageLayout from '@layouts/ComingSoonPageLayout'
 import DefaultLayout from '@layouts/DefaultLayout'
 import { AppPropsWithLayout } from '@types'
 import { useEffect, useState } from 'react'
@@ -17,10 +18,10 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   }, [])
 
   const App = (
-    <>
+    <ComingSoonPageLayout>
       {getLayout(<Component {...pageProps} />)}
       {generateTailwindClasses()}
-    </>
+    </ComingSoonPageLayout>
   )
 
   return (
