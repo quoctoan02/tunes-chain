@@ -107,7 +107,7 @@ export const useActive = () => {
           <div className="mt-6 flex items-center justify-center gap-5">
             <Button
               className="hover:text-primary-500 hover:border-primary-500 w-full dark:text-white"
-              type="default"
+              type="dashed"
               onClick={() => Modal.destroyAll()}
             >
               Cancel

@@ -13,10 +13,10 @@ const buttonVariants = cva(cn(''), {
     type: {
       text: '',
       link: '',
-      default: '',
+      default: 'enabled:hover:text-primary-500 enabled:hover:border-primary-500',
       ghost: '',
-      primary: '',
-      dashed: '',
+      primary: 'bg-primary-500 enabled:hover:bg-primary-600',
+      dashed: 'enabled:hover:text-primary-500 enabled:hover:border-primary-500',
     },
   },
   defaultVariants: {

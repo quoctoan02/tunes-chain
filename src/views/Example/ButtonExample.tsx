@@ -16,6 +16,7 @@ const ButtonExample: FC<ButtonExampleProps> = (props) => {
           Default Button
         </Button>
         <Button type="dashed">Dashed Button</Button>
+        <Button type="ghost">Ghost Button</Button>
         <Button className="" type="primary" disabled>
           Disabled Button
         </Button>
