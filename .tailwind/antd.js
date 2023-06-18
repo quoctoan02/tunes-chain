@@ -36,6 +36,38 @@ const antd = {
   '.ant-progress .ant-progress-bg': {
     '@apply bg-primary-500': {},
   },
+  '.ant-input-group-wrapper': {
+    '.ant-input-wrapper': {
+      '@apply h-full text-inherit-size': {},
+      '.ant-input': {
+        '@apply h-full text-inherit-size': {},
+      },
+      '.ant-btn': {
+        '@apply h-full text-inherit-size': {},
+      },
+    },
+  },
+
+  // '.ant-input': {
+  //   '&&-sm': {
+  //     '@apply': {},
+  //     input: {
+  //       '@apply h-full': {},
+  //     },
+  //   },
+  //   '&&-md': {
+  //     '@apply': {},
+  //   },
+  //   '&&-lg': {
+  //     '@apply': {},
+  //   },
+  //   '&-wrapper': {
+  //     '@apply h-full': {},
+  //   },
+  //   '.ant-btn': {
+  //     '@apply h-full': {},
+  //   },
+  // },
 }
 
 module.exports = plugin(({ addUtilities }) => {

@@ -55,6 +55,9 @@ module.exports = plugin(({ addBase, theme }) => {
       overflowWrap: 'break-word',
       wordBreak: 'break-all',
     },
+    '.text-inherit-size': {
+      fontSize: 'inherit',
+    },
     '*': {
       margin: 0,
       padding: 0,

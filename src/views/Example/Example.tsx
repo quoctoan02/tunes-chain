@@ -1,7 +1,7 @@
 import { UserOutlined } from '@ant-design/icons'
 import { tailwindColors } from '@app/ant-provider'
 import { Container } from '@components/Layout'
-import { Button, CustomLink } from '@components/ui'
+import { Button, CustomLink, Input } from '@components/ui'
 import { toastContent } from '@helpers/toastContent'
 import {
   Avatar,
@@ -13,7 +13,6 @@ import {
   Divider,
   Dropdown,
   Form,
-  Input,
   InputNumber,
   MenuProps,
   Pagination,
@@ -218,6 +217,10 @@ const Example: FC<ExampleProps> = (props) => {
           </Form.Item>
           <Form.Item label="Number" name="number" rules={[{ required: true, message: 'Please input your number!' }]}>
             <InputNumber min={1} max={10} defaultValue={3} />
+          </Form.Item>
+
+          <Form.Item>
+            <Input.Search addonBefore="Hello" size="large" />
           </Form.Item>
 
           <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
