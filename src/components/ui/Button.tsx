@@ -10,12 +10,21 @@ const buttonVariants = cva(cn(''), {
       middle: 'h-10 text-lg',
       large: 'h-12 text-xl',
     },
+    type: {
+      text: '',
+      link: '',
+      default: '',
+      ghost: '',
+      primary: '',
+      dashed: '',
+    },
   },
   defaultVariants: {
     size: 'small',
+    type: 'default',
   },
 })
-export interface ButtonProps extends AntButtonProps, Omit<VariantProps<typeof buttonVariants>, 'size'> {
+export interface ButtonProps extends AntButtonProps, Omit<VariantProps<typeof buttonVariants>, 'size' | 'type'> {
   async?: boolean
 }
 
@@ -26,7 +35,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     const [isLoading, setIsLoading] = useState(false)
 
-    const handleAsyncClick = async (e: MouseEvent<HTMLButtonElement>) => {
+    const handleAsyncClick = async (e: MouseEvent<HTMLButtonElement> & MouseEvent<HTMLAnchorElement>) => {
       setIsLoading(true)
       await onClick(e)
       setIsLoading(false)
@@ -34,13 +43,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     return (
       <AntButton
-        // @ts-ignore
         onClick={async ? handleAsyncClick : onClick}
         type={type}
         loading={isLoading}
         disabled={isLoading || disabled}
         {...props}
-        className={cn(buttonVariants({ size }), className)}
+        className={cn(buttonVariants({ size, type }), className)}
         ref={ref}
       >
         {children}
