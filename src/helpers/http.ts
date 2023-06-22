@@ -40,7 +40,17 @@ http.interceptors.response.use(
     return Promise.resolve(response)
   },
   (error: AxiosError) => {
-    error.response.statusText = error.response?.data?.['error_code'] || 'Connection lost'
+    if (error.response?.data?.['error_code']) {
+      const errorMessage = error.response?.data?.['error_code'] || 'Connection lost'
+      const isSnakeCase = /^[A-Z]+(?:_[A-Z]+)*$/.test(errorMessage)
+
+      if (isSnakeCase) {
+        // Convert error code to text
+        error.response.statusText = errorMessage.replaceAll('_', ' ')
+      } else {
+        error.response.statusText = errorMessage
+      }
+    }
     error.response.data = null
     return Promise.resolve(error.response)
   }
