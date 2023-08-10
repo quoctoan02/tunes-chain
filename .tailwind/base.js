@@ -36,24 +36,12 @@ module.exports = plugin(({ addBase, theme }) => {
       wordBreak: 'break-all',
     },
     '.text-overflow-2': {
-      display: '-webkit-box',
-      textOverflow: 'ellipsis',
-      display: '-webkit-box',
-      overflow: 'hidden',
+      '@apply text-overflow-1': {},
       WebkitLineClamp: '2',
-      WebkitBoxOrient: 'vertical',
-      overflowWrap: 'break-word',
-      wordBreak: 'break-all',
     },
     '.text-overflow-3': {
-      display: '-webkit-box',
-      textOverflow: 'ellipsis',
-      display: '-webkit-box',
-      overflow: 'hidden',
+      '@apply text-overflow-1': {},
       WebkitLineClamp: '3',
-      WebkitBoxOrient: 'vertical',
-      overflowWrap: 'break-word',
-      wordBreak: 'break-all',
     },
     '.text-inherit-size': {
       fontSize: 'inherit',
@@ -81,16 +69,6 @@ module.exports = plugin(({ addBase, theme }) => {
     },
     button: {
       '@apply cursor-pointer bg-transparent': {},
-    },
-
-    '*::-webkit-scrollbar': {
-      '@apply w-2': {},
-    },
-    '*::-webkit-scrollbar-track': {
-      '@apply bg-gray-200': {},
-    },
-    '*::webkit-scrollbar-thumb': {
-      '@apply bg-primary-300 hover:bg-primary-400': {},
     },
   })
 })
