@@ -1,10 +1,8 @@
-'use client'
-
 import { cn } from '@utils/style'
-import { cva, VariantProps } from 'class-variance-authority'
-import React from 'react'
+import { VariantProps, cva } from 'class-variance-authority'
+import { HTMLAttributes, ReactNode, forwardRef } from 'react'
 
-const containerVariants = cva('mx-auto w-full px-4 md:px-6', {
+const containerVariants = cva('mx-auto w-full px-4 lg:px-6', {
   variants: {
     size: {
       default: 'max-w-screen-default',
@@ -27,13 +25,13 @@ const containerVariants = cva('mx-auto w-full px-4 md:px-6', {
   },
 })
 
-export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof containerVariants> {
-  className?: string
-  size?: 'default' | 'mobile' | 'tablet' | 'retina' | 'fhd' | 'qhd' | 'uhd' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
+export interface ContainerProps extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof containerVariants> {
+  children?: ReactNode
+  size?: VariantProps<typeof containerVariants>['size']
 }
 
-const Container = React.forwardRef<HTMLDivElement, ContainerProps>(({ children, className, size, ...props }, ref) => {
-  const classes = cn(containerVariants({ size, className }))
+export const Container = forwardRef<HTMLDivElement, ContainerProps>(({ children, className, size, ...props }, ref) => {
+  const classes = cn(containerVariants({ size }), className)
 
   return (
     <div ref={ref} className={classes} {...props}>
@@ -42,4 +40,4 @@ const Container = React.forwardRef<HTMLDivElement, ContainerProps>(({ children, 
   )
 })
 
-export default Container
+Container.displayName = 'Container'
