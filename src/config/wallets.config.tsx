@@ -1,5 +1,6 @@
-import { HOST } from '@config/host.config'
 import { ConnectorIds } from './wagmi.config'
+
+const HOST = typeof window !== 'undefined' ? window.location.href : ''
 
 export const wallets: Wallet[] = [
   {

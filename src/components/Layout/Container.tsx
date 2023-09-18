@@ -30,7 +30,7 @@ export interface ContainerProps extends HTMLAttributes<HTMLDivElement>, VariantP
   size?: VariantProps<typeof containerVariants>['size']
 }
 
-export const Container = forwardRef<HTMLDivElement, ContainerProps>(({ children, className, size, ...props }, ref) => {
+const Container = forwardRef<HTMLDivElement, ContainerProps>(({ children, className, size, ...props }, ref) => {
   const classes = cn(containerVariants({ size }), className)
 
   return (
@@ -41,3 +41,4 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>(({ children,
 })
 
 Container.displayName = 'Container'
+export default Container

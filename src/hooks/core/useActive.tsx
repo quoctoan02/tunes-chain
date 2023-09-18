@@ -1,9 +1,9 @@
 import { Button } from '@components/ui'
-import { DEFAULT_CHAIN_ID } from '@config/chains.config'
 import { ConnectorIds, connectorInstances } from '@config/wagmi.config'
 import { wallets } from '@config/wallets.config'
 import { Popper } from '@helpers/Popper'
 import { useUser } from '@hooks/stores/useUser'
+import { useWeb3 } from '@hooks/stores/useWeb3'
 import { Modal } from 'antd'
 import { useCallback } from 'react'
 import { isDesktop } from 'react-device-detect'
@@ -15,6 +15,7 @@ export const useActive = () => {
   const hasInjectedProvider = typeof window !== 'undefined' && typeof window['ethereum'] !== 'undefined'
 
   const { connectAsync } = useConnect()
+  const { chain } = useWeb3()
 
   const { disconnectAsync } = useDisconnect()
   const { address: account, isConnected, isConnecting } = useAccount()
@@ -26,7 +27,7 @@ export const useActive = () => {
       const connector = connectorInstances[connectorId]
       await connectAsync({
         connector,
-        chainId: DEFAULT_CHAIN_ID,
+        chainId: chain.id,
       })
     } catch (err) {
       if (err instanceof UserRejectedRequestError) {

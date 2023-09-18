@@ -2,11 +2,11 @@ import { configureChains, createClient, CreateClientConfig } from 'wagmi'
 import { InjectedConnector } from 'wagmi/connectors/injected'
 import { WalletConnectLegacyConnector } from 'wagmi/connectors/walletConnectLegacy'
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
-import { DEFAULT_CHAIN } from './chains.config'
+import { supportedChains } from './chains.config'
 
 const defaultProvider = jsonRpcProvider({ rpc: (chain) => ({ http: chain.rpcUrls.default.http[0] }) })
 
-export const { provider, webSocketProvider } = configureChains([DEFAULT_CHAIN], [defaultProvider])
+export const { provider, webSocketProvider, chains } = configureChains(supportedChains, [defaultProvider])
 
 export enum ConnectorIds {
   Injected = 'injected',
@@ -15,11 +15,11 @@ export enum ConnectorIds {
 
 export const connectorInstances = {
   [ConnectorIds.Injected]: new InjectedConnector({
-    chains: [DEFAULT_CHAIN],
+    chains,
     options: {},
   }),
   [ConnectorIds.WalletConnect]: new WalletConnectLegacyConnector({
-    chains: [DEFAULT_CHAIN],
+    chains,
     options: {},
   }),
 }

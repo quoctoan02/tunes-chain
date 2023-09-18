@@ -1,4 +1,5 @@
 import { GlobalHooks } from '@app/global-hooks'
+import { ButtonClearCache } from '@components/wallet/ButtonClearCache'
 import { config } from '@config/swr.config'
 import { client } from '@config/wagmi.config'
 import { ToastContainer } from 'react-toastify'
@@ -21,7 +22,11 @@ export const Provider = ({ children }) => {
           pauseOnHover
           autoClose={3500}
         />
-        <AntProvider>{children}</AntProvider>
+        <AntProvider>
+          {children}
+
+          {process.env.NEXT_PUBLIC_SHOW_CLEAR_CACHE && <ButtonClearCache />}
+        </AntProvider>
       </WagmiConfig>
     </SWRConfig>
   )

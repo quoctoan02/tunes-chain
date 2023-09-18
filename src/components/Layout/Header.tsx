@@ -1,7 +1,9 @@
 import { ToggleTheme } from '@app/toggle-theme'
 import { CustomLink } from '@components/ui'
+import { ChainSelector } from '@components/wallet/ChainSelector'
 import { routePath, routes } from '@config/routes.config'
 import { useActive } from '@hooks/core/useActive'
+import { useChainSetup } from '@hooks/core/useChainSetup'
 import { truncateAddress } from '@utils/string'
 import { cn } from '@utils/style'
 import { Button, Drawer } from 'antd'
@@ -15,6 +17,9 @@ interface HeaderProps {}
 const Header: FC<HeaderProps> = (props) => {
   const router = useRouter()
   const { connect, disconnect, isConnecting, isConnected, account } = useActive()
+
+  const { chains, currentChain, selectChain } = useChainSetup()
+  console.log('🚀 ~ file: Header.tsx:21 ~ chains:', chains)
 
   const [isOpenDrawer, setIsOpenDrawer] = useState<boolean>(false)
 
@@ -49,6 +54,7 @@ const Header: FC<HeaderProps> = (props) => {
                 )
               })}
             </nav>
+            <ChainSelector />
             <Button
               loading={isConnecting}
               disabled={isConnecting}
