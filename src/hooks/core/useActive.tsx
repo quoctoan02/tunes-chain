@@ -14,8 +14,8 @@ import { UserRejectedRequestError, useAccount, useConnect, useDisconnect } from 
 export const useActive = () => {
   const hasInjectedProvider = typeof window !== 'undefined' && typeof window['ethereum'] !== 'undefined'
 
-  const { connectAsync } = useConnect()
-  const { chain } = useWeb3()
+  const { chain, signerOrProvider } = useWeb3()
+  const { connectAsync, connect: wagmiConnect } = useConnect({ chainId: chain.id })
 
   const { disconnectAsync } = useDisconnect()
   const { address: account, isConnected, isConnecting } = useAccount()
@@ -25,11 +25,19 @@ export const useActive = () => {
   const handleConnect = async (connectorId: ConnectorIds) => {
     try {
       const connector = connectorInstances[connectorId]
-      await connectAsync({
+      console.log('🚀 ~ file: useActive.tsx:28 ~ handleConnect ~ connector:', connector)
+
+      wagmiConnect({
         connector,
         chainId: chain.id,
       })
+
+      // await connectAsync({
+      //   connector,
+      //   chainId: chain.id,
+      // })
     } catch (err) {
+      console.log('🚀 ~ file: useActive.tsx:40 ~ handleConnect ~ err:', err)
       if (err instanceof UserRejectedRequestError) {
         toast.error('You have rejected the connect request')
       } else {
@@ -97,6 +105,13 @@ export const useActive = () => {
     })
   }
 
+  const disconnectWallet = () => {
+    disconnectAsync()
+    logout()
+    Modal.destroyAll()
+    Popper.close()
+  }
+
   const disconnect = useCallback(async () => {
     Modal.confirm({
       content: (
@@ -113,16 +128,7 @@ export const useActive = () => {
             >
               Cancel
             </Button>
-            <Button
-              className=" w-full dark:text-white"
-              type="primary"
-              onClick={() => {
-                disconnectAsync()
-                logout()
-                Modal.destroyAll()
-                Popper.close()
-              }}
-            >
+            <Button className=" w-full dark:text-white" type="primary" onClick={disconnectWallet}>
               OK
             </Button>
           </div>
@@ -151,5 +157,5 @@ export const useActive = () => {
     // }
   }, [disconnectAsync, logout])
 
-  return { connect, disconnect, isConnecting, isConnected, account }
+  return { connect, disconnect, isConnecting, isConnected, account, disconnectWallet }
 }

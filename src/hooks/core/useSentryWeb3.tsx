@@ -12,12 +12,13 @@ import { useActive } from './useActive'
 export const useSentryWeb3 = () => {
   const { chain } = useNetwork()
   const { switchNetworkAsync } = useSwitchNetwork()
+
   const { disconnect } = useActive()
   const { address } = useAccount()
   const { data: signer } = useSigner()
-  const provider = useProvider()
   const { chain: internalChain, updateAccount, updateSigner, updateSignerOrProvider } = useWeb3()
 
+  const provider = useProvider({ chainId: internalChain?.id })
   const [isConnecting, setIsConnecting] = useState(false)
 
   const setupChain = useCallback(async () => {
@@ -31,7 +32,7 @@ export const useSentryWeb3 = () => {
       toast.error(err?.message)
       popWeb3Errors(err, 'Switch network failed')
     }
-  }, [internalChain, switchNetworkAsync, disconnect])
+  }, [internalChain, switchNetworkAsync])
 
   useSWR(['sentry chain', chain, setupChain], () => {
     if (chain?.unsupported === true) {

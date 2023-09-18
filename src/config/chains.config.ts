@@ -9,7 +9,7 @@ const chainsConfig = <const>{
 }
 
 const supportedChainsConfig = {
-  [Env.development]: [baseGoerli, bsc],
+  [Env.development]: [baseGoerli, bsc, bscTestnet, fantom, fantomTestnet, baseGoerli],
   [Env.staging]: [baseGoerli, bsc, mainnet, bsc, bscTestnet, fantom, fantomTestnet],
   [Env.production]: [bsc],
 }

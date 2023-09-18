@@ -19,7 +19,6 @@ const Header: FC<HeaderProps> = (props) => {
   const { connect, disconnect, isConnecting, isConnected, account } = useActive()
 
   const { chains, currentChain, selectChain } = useChainSetup()
-  console.log('🚀 ~ file: Header.tsx:21 ~ chains:', chains)
 
   const [isOpenDrawer, setIsOpenDrawer] = useState<boolean>(false)
 

@@ -2,7 +2,7 @@
   "name": "web3-template",
   "version": "0.1.0",
   "private": true,
-  "author": "Liam Dev",
+  "author": "PTDev & Liam Dev",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
@@ -42,8 +42,8 @@
     "sweetalert2-react-content": "5.0.7",
     "swr": "^2.1.2",
     "uuid": "^9.0.0",
-    "wagmi": "^0.12.10",
-    "zustand": "^4.3.7"
+    "zustand": "^4.3.7",
+    "wagmi": "0.12.19"
   },
   "devDependencies": {
     "@bonehub/tailwind-dynamic-colors": "^0.0.3",
