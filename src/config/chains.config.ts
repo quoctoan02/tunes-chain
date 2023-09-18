@@ -1,15 +1,19 @@
 import { Chain } from 'wagmi'
-import { baseGoerli, bsc, bscTestnet, mainnet } from 'wagmi/chains'
+import { baseGoerli, bsc, bscTestnet, fantom, fantomTestnet, mainnet } from 'wagmi/chains'
+import { ENV, Env } from './env.config'
 
-export const DEFAULT_CHAIN_ID: number = (parseInt(process.env.NEXT_PUBLIC_DEFAULT_CHAIN_ID) as number) || baseGoerli.id
+const chainsConfig = <const>{
+  [Env.development]: baseGoerli,
+  [Env.staging]: bsc,
+  [Env.production]: bsc,
+}
 
-export const supportedChains: Chain[] = [bsc, bscTestnet, mainnet, baseGoerli]
+const supportedChainsConfig = {
+  [Env.development]: [baseGoerli, bsc],
+  [Env.staging]: [baseGoerli, bsc, mainnet, bsc, bscTestnet, fantom, fantomTestnet],
+  [Env.production]: [bsc],
+}
 
-export const chainsMap: Partial<Record<number, Chain>> = supportedChains.reduce((prev, curr, index, arr) => {
-  return {
-    ...prev,
-    [curr['id']]: curr,
-  }
-}, {})
+export const supportedChains: Chain[] = supportedChainsConfig[ENV]
 
-export const DEFAULT_CHAIN: Chain = chainsMap[DEFAULT_CHAIN_ID]
+export const DEFAULT_CHAIN: Chain = chainsConfig[ENV]

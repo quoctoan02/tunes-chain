@@ -6,17 +6,18 @@ import { MouseEvent, forwardRef, useState } from 'react'
 const buttonVariants = cva(cn(''), {
   variants: {
     size: {
-      small: 'h-8 text-sm',
-      middle: 'h-10 text-lg',
-      large: 'h-12 text-xl',
+      small: cn('h-8 text-sm'),
+      middle: cn('h-10 text-lg'),
+      large: cn('h-12 text-xl'),
     },
     type: {
-      text: '',
-      link: '',
-      default: 'enabled:hover:text-primary-500 enabled:hover:border-primary-500',
-      ghost: '',
-      primary: 'bg-primary-500 enabled:hover:bg-primary-600',
-      dashed: 'enabled:hover:text-primary-500 enabled:hover:border-primary-500',
+      text: cn(''),
+      link: cn(''),
+      default: cn('enabled:hover:text-primary-500 enabled:hover:border-primary-500'),
+      ghost: cn(''),
+      primary: cn('bg-primary-500 enabled:hover:bg-primary-600 shadow-sm'),
+      secondary: cn('!bg-red-500 border-red-500'),
+      dashed: cn('enabled:hover:text-primary-500 enabled:hover:border-primary-500 '),
     },
   },
   defaultVariants: {
@@ -24,18 +25,21 @@ const buttonVariants = cva(cn(''), {
     type: 'default',
   },
 })
-export interface ButtonProps extends AntButtonProps, Omit<VariantProps<typeof buttonVariants>, 'size' | 'type'> {
+export interface ButtonProps extends Omit<AntButtonProps, 'type'>, Omit<VariantProps<typeof buttonVariants>, 'size'> {
   async?: boolean
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    { onClick, children, type = 'default', async = false, disabled = false, size = 'small', className, ...props },
-    ref
-  ) => {
+  ({ onClick, children, type, async = false, disabled = false, size = 'small', className, ...props }, ref) => {
     const [isLoading, setIsLoading] = useState(false)
 
+    const buttonType = ['default', 'primary', 'dashed', 'link', 'text'].find(
+      (btnType) => btnType === type
+    ) as AntButtonProps['type']
+
     const handleAsyncClick = async (e: MouseEvent<HTMLButtonElement> & MouseEvent<HTMLAnchorElement>) => {
+      if (!onClick) return
+
       setIsLoading(true)
       await onClick(e)
       setIsLoading(false)
@@ -44,7 +48,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <AntButton
         onClick={async ? handleAsyncClick : onClick}
-        type={type}
+        type={buttonType}
         loading={isLoading}
         disabled={isLoading || disabled}
         {...props}

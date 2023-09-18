@@ -1,9 +1,9 @@
-import { bsc, goerli } from 'wagmi/chains'
-import { DEFAULT_CHAIN_ID } from './chains.config'
+import { ENV, Env } from './env.config'
 
-const API_URLS = {
-  [bsc.id]: '',
-  [goerli.id]: '',
+const API_URLS = <const>{
+  [Env.development]: '',
+  [Env.staging]: '',
+  [Env.production]: '',
 }
 
-export const API_URL = API_URLS[DEFAULT_CHAIN_ID]
+export const API_URL = API_URLS[ENV]
