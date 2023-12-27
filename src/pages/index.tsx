@@ -1,11 +1,14 @@
-import Example from '@views/Example'
+import { Center, SideBar } from '@components/Layout'
 import type { NextPage } from 'next'
 
 const Home: NextPage = () => {
   return (
-    <>
-      <Example />
-    </>
+    <div className="flex">
+      {/* <Example /> */}
+      {/* <h1 className='text-3xl text-red-500'>Hello World</h1> */}
+      <SideBar />
+      <Center />
+    </div>
   )
 }
 

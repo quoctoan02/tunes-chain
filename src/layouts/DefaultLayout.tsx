@@ -1,4 +1,3 @@
-import { Header } from '@components/Layout'
 import { FC, ReactNode } from 'react'
 
 interface DefaultLayoutProps {
@@ -8,8 +7,8 @@ interface DefaultLayoutProps {
 const DefaultLayout: FC<DefaultLayoutProps> = ({ children }) => {
   return (
     <div>
-      <Header />
-      <main className="pt-16">{children}</main>
+      {/* <Header /> */}
+      <main className="">{children}</main>
       {/* <Footer /> */}
     </div>
   )

@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   return (
     <Provider>
-      <MetaHead title="Template Dapp NextJs" />
+      <MetaHead title="Tunes Chain" />
       {mounted ? App : <Loader />}
     </Provider>
   )
