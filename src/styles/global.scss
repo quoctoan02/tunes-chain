@@ -1,0 +1,23 @@
+// html {
+//   font-size: 100%;
+//   @media (min-width: 768px) {
+//     font-size: 85%; // 1 rem = 13.6px
+//   }
+//   @media (min-width: 1536px) {
+//     font-size: 100%;
+//   }
+// }
+
+a:hover {
+  color: inherit;
+}
+
+// Custom React Toastify
+.Toastify {
+  .Toastify__toast.Toastify__toast--default {
+    // @apply bg-black;
+  }
+  .Toastify__close-button.Toastify__close-button--colored {
+    @apply text-slate-700;
+  }
+}
