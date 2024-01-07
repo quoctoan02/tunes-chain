@@ -24,4 +24,7 @@ module.exports = {
   pageExtensions: ['tsx'],
   env,
   webpack,
+  images: {
+    domains: ['seed-mix-image.spotifycdn.com'],
+  },
 }
