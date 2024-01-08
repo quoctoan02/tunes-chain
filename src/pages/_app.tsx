@@ -5,10 +5,11 @@ import { generateTailwindClasses } from '@config/generate-tailwind-classes'
 import ComingSoonPageLayout from '@layouts/ComingSoonPageLayout'
 import DefaultLayout from '@layouts/DefaultLayout'
 import { AppPropsWithLayout } from '@types'
+import { SessionProvider } from 'next-auth/react'
 import { useEffect, useState } from 'react'
 import '../styles/styles.scss'
 
-function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }: AppPropsWithLayout) {
   const [mounted, setMounted] = useState(false)
 
   const getLayout = Component.getLayout ?? ((page) => <DefaultLayout>{page}</DefaultLayout>)
@@ -25,10 +26,12 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   )
 
   return (
-    <Provider>
-      <MetaHead title="Tunes Chain" />
-      {mounted ? App : <Loader />}
-    </Provider>
+    <SessionProvider session={session}>
+      <Provider>
+        <MetaHead title="Tunes Chain" />
+        {mounted ? App : <Loader />}
+      </Provider>
+    </SessionProvider>
   )
 }
 
